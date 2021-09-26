@@ -1,5 +1,5 @@
 Projet :
-- faire un ENT en plus joli
+- faire un ENT plus joli
 - plus ergonomique
 - avec plus d'infos
 
