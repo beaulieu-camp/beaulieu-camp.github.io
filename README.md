@@ -1,6 +1,6 @@
 Projet :
 - faire un ENT en plus joli
-- plus ergonique
+- plus ergonomique
 - avec plus d'infos
 
 Lien d'accès : https://aquabx.ovh/univ
