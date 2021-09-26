@@ -6,7 +6,9 @@ Projet :
 Lien d'accès : https://aquabx.ovh/univ
 
 to do list :
-- tout à faire (c'est une blague évidement)
+- finir la carte
+- peaufiner le design
+- ajouter des fontionalités
 
 Toute suggestion ou aide externe est la bienvenue. 
 
