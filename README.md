@@ -4,7 +4,7 @@ Lien d'accès : https://aquabx.ovh/univ
 
 Projet de faire un ENT en plus joli: 
 
-![ScreenShot](https://github.com/aquabx/univ/blob/master/screenshot.png?raw=true)
+![ScreenShot](screenshot.png)
 
 
 to do list :
