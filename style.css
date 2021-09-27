@@ -266,3 +266,69 @@ input:focus{
 .button:hover{
     opacity: 75%;
 }
+
+
+/* Bordel */
+
+#map{
+            width: 100%;
+            height: 60%;
+        }
+        .menu-items > .fas {
+            padding: 11px 0;
+            height: auto;
+            width: auto;
+        }
+        table{
+            text-align: center;
+            border-collapse: collapse;
+            width:100%;
+        }
+        td{
+            padding: 5px;
+            text-align: left;
+            border: 1px dashed black;
+        }
+        td *{
+            margin:0;
+        }
+
+        .card{
+        	display:inline-block;
+        	background-color:rgb(235,235,235);
+        	border: 5px solid #00000030;
+        	width:clamp(20px, calc(100% - 10px), 400px);
+        	height : 168px;
+        	transform: scale(0.9);
+        	transition: transform 0.5s;
+            vertical-align: middle;
+        }
+
+        .card:hover{
+        	transform: scale(1);
+        }
+
+        .card>.container{
+        	display : block;
+            width:100%;
+            height:100%;
+        }
+
+        .card>.reverse{
+        	display : none;
+        	vertical-align : middle;
+            padding: 16px;
+            opacity: 0.85;
+        }
+
+        .card:hover > .container{
+        	display : none;
+        }
+
+        .card:hover > .reverse{
+        	display : block;
+        }
+
+        ul {
+            padding : 0 0 0 20px;
+        }
