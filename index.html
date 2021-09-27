@@ -339,7 +339,7 @@
     async function scrap(req){
         const parser = new DOMParser();
 
-        let res2 = await fetch("scrap.php?q=resto-u&t="+req);
+        let res2 = await fetch("https://aquabx.ovh/univ/scrap.php?q=resto-u&t="+req);
         res2 = await res2.text();
 
         const doc2 = parser.parseFromString(res2, "text/html");
