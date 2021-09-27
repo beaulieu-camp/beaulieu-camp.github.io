@@ -5,7 +5,7 @@ let index = 0
 menuItems[index].classList.add('active')
 document.querySelector( menuItems[index].getAttribute("for-id") ).classList.add('active')
 
-for(item of menuItems){
+for(var item of menuItems){
 	item.onclick = function(){
 		menuItems[index].classList.remove('active')
 		document.querySelector( menuItems[index].getAttribute("for-id") ).classList.remove('active')
@@ -23,7 +23,7 @@ function filter(form,tableid) {
 
 	for (let i=0; i < childs.length; i++) {
 		let status = true;
-		for (item of inputs){
+		for (var item of inputs){
 			let filter = item.value.toUpperCase();
 			let cat = item.name
 			let txtValue = childs[i].getAttribute(cat).toUpperCase();
