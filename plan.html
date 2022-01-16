@@ -38,7 +38,7 @@
             pane: 'labels'
     }).addTo(map);
 
-    var polys = await fetch("https://aquabx.ovh/univ/polygons.json")
+    var polys = await fetch("https://aquabx.ovh/univ/polygons.php")
     polys = await polys.json()
 
     for (var pol of polys){
