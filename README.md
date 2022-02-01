@@ -3,7 +3,7 @@ Projet :
 - plus ergonomique
 - avec plus d'infos
 
-Lien d'accès : https://aquabx.ovh/univ
+Lien d'accès : https://aquabx.github.io/univ
 
 to do list :
 - finir la carte
