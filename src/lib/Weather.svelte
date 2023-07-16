@@ -1,12 +1,20 @@
 <script>
     import Card from "./Card.svelte"
+    import { onMount } from "svelte";
 
-    export let temperature
-    export let weather
-    let icon
-    let desc
+    let icon = ""
+    let desc = ""
+    let code = ""
+    let temperature = ""
 
-    $: switch (weather) {
+    onMount(async()=>{
+        const response = await fetch('api/weather')
+        let data = await response.json()
+        temperature = data.temperature
+        code = data.code
+    })
+
+    $: switch (code) {
         case '01d' : icon = '/weather/01d.svg'; desc= "Dégagé"   ;break;
         case '01n' : icon = '/weather/01n.svg'; desc= "Dégagé"   ;break;
         case '02d' : icon = '/weather/02d.svg'; desc= "Epars"    ;break;
@@ -30,9 +38,9 @@
 
 <Card title="Méteo Beaulieu">
 
-    <img src={icon}/>
+    <img src={icon} alt="icon"/>
     <div>
-        <h1> {parseInt(temperature)}° </h1>
+        <h1> {temperature}° </h1>
         <p> {desc} </p>
     </div>
 </Card>
