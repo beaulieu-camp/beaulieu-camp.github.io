@@ -32,7 +32,6 @@
         padding: 1rem ;
         color:white;
         border-radius: 40px;
-        max-width: 20rem;
         box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
     }
 

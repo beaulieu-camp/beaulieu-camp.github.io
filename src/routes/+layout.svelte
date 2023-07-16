@@ -3,20 +3,39 @@
 </script>
 
 
-<h1>Beaulieu'niv</h1>
+<h1><a href="/">Beaulieu'niv</a></h1>
 
 <div>
 	<slot></slot>
 </div>
 
+<h3>Made with ❤️ by <a href="https://www.aquabx.ovh">AquaBx</a></h3>
 
 <style>
-	h1 {
+	a[href] {
+		all:unset;
+		cursor: pointer;
+		transition: 0.3s;
+	}
+
+	a[href]:hover {
+		opacity: 0.5;
+	}
+
+	a:visited{
 		color: white;
+	}
+
+	h1,h3 {
+		color: white;
+		text-align: center;
+		
 	}
     div {
         display: flex;
         flex-direction: column;
         gap:2em;
+		margin: auto;
+		max-width: 20rem;
     }
 </style>
