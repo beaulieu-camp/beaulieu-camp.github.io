@@ -22,6 +22,14 @@
         'b41_salle_104': { }
     }
 
+    function stringify_date(time){
+        if (time == undefined) return 'updating';
+
+        let date = new Date(time)
+        
+        return `jusqu'au ${date.getDate()}/${date.getMonth()+1} à ${date.getHours()}:${date.getMinutes()}`
+    }
+
 
     onMount( async() => {
         salles = await fetchSalles(Object.keys(salles),1667940180000)
@@ -40,11 +48,35 @@
     {#each Object.keys(salles) as salle } 
         <Card title={salle}>
             {#if salles[salle]["state"] == true }
-                Libre jusqu'à
+                <span class="green">
+                    Libre
+                    {stringify_date(salles[salle]["until"])}
+                </span>
             {:else if salles[salle]["state"] == false }
-                Occupé jusqu'à
-            {/if}
-
-            {new Date(salles[salle]["until"])}
+                <span class="red">
+                    Occupé
+                    {stringify_date(salles[salle]["until"])}
+                </span>
+            {:else}
+                <span>
+                    {stringify_date(salles[salle]["until"])}
+                </span>
+            {/if} 
         </Card>
     {/each}
+
+
+    <style>
+        span {
+            width: 100%;
+            text-align: center;
+        }
+
+        span.green {
+            color: rgb(26, 196, 77)
+        }
+
+        span.red {
+            color: rgb(204, 13, 13)
+        }
+    </style>
