@@ -5,7 +5,7 @@
 
 <h1><a href="/">Beaulieu'niv</a></h1>
 
-<div>
+<div class="portfolio">
 	<slot></slot>
 </div>
 
@@ -31,11 +31,20 @@
 		text-align: center;
 		
 	}
-    div {
+    /* div {
         display: flex;
         flex-direction: column;
         gap:2em;
 		margin: auto;
-		max-width: 20rem;
-    }
+    } */
+	
+	
+	.portfolio {
+		column-width: 20rem;
+		column-gap: 1em;
+	}
+	
+
+
+
 </style>

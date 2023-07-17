@@ -25,7 +25,7 @@
 
         var map = L.map("mymap", {
             center: [48.119,-1.638],
-            zoom: 15
+            zoom: 15,
         });
 
         let query = window.matchMedia('(prefers-color-scheme: dark)')

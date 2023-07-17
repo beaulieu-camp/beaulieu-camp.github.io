@@ -2,31 +2,44 @@
     import Card from "./Card.svelte"
 
     export let title
-    export let link = ""
+    export let link
 </script>
 
 
-
-    <a href={link} class="card">
+{#if link}
+    <div class="card" href={link}>
         <h3>{title}</h3>
         <div class="flex">
             <slot></slot>
         </div>
-    </a>
+    </div>
+{:else}
+    <div class="card">
+        <h3>{title}</h3>
+        <div class="flex">
+            <slot></slot>
+        </div>
+    </div>
+{/if}
+
 
 
 <style>
-    a {
+    a[href] {
         all:unset;
         cursor:pointer;
     }
 
-    a.card > h3 {
+    .card > h3 {
+        
         margin:0 0 0.5em 0;
         text-align: center;
     }
 
-    a.card {
+    .card {
+        overflow: hidden;
+        margin-bottom: 1em;
+        break-inside: avoid;
         background-color: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(4);
         padding: 1rem ;

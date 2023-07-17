@@ -4,14 +4,14 @@
 </script>
 
     <Card title="Salles libres" link="salles">
-        <span>
+        <a href="/salles">
             Voir la disponibilité des salles
-        </span>
+        </a>
     </Card>
 
 <style>
 
-span{
+a{
     text-align: center;
     width: 100%;
 }
