@@ -34,11 +34,11 @@
 	}
 
 	a:visited{
-		color: white;
+		all:unset;
 	}
 
 	h1,h3 {
-		color: white;
+
 		text-align: center;
 		
 	}	

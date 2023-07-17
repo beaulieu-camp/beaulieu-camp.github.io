@@ -39,10 +39,9 @@
         overflow: hidden;
         margin-bottom: 1em;
         break-inside: avoid;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: var(--secondary);
         backdrop-filter: blur(4);
         padding: 1rem ;
-        color:white;
         border-radius: 40px;
         box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
     }

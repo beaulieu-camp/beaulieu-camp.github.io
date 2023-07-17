@@ -13,19 +13,21 @@
 	--vh: 100vh;
 
 
-    --background:rgb(231, 231, 255);
+    --primary:rgb(229, 239, 255);
+    --secondary:rgba(255, 255, 255, 0.5);
     --text:#000000;
 }
 
 @media (prefers-color-scheme: dark){
     :root	{
-        --background:#101A3F;
+        --primary:rgb(16, 26, 63);
+        --secondary:rgba(0, 0, 0, 0.5);
         --text:white;
 	}
 }
 
 body {
-    background-color: var(--background);
+    background-color: var(--primary);
     color: var(--text);
     font-family: 'Poppins', sans-serif;
 }
