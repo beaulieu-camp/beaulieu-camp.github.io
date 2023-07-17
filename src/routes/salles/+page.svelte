@@ -46,7 +46,7 @@
 
 
     {#each Object.keys(salles) as salle } 
-        <Card title={salle}>
+        <Card title={salle} link={null}>
             {#if salles[salle]["state"] == true }
                 <span class="green">
                     Libre

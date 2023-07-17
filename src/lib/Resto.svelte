@@ -7,8 +7,6 @@
     onMount(async()=>{
         const response = await fetch('api/resto')
         data = await response.json()
-        temperature = data.temperature
-        code = data.code
     })
 
 </script>

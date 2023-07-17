@@ -1,12 +1,11 @@
 <script>
-    import Card from "./Card.svelte"
-
     export let title
     export let link
+
 </script>
 
 
-{#if link}
+{#if link }
     <div class="card" href={link}>
         <h3>{title}</h3>
         <div class="flex">
