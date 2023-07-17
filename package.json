@@ -17,8 +17,6 @@
 		"@supabase/supabase-js": "^2.26.0",
 		"cheerio": "^1.0.0-rc.12",
 		"leaflet": "^1.9.4",
-		"sqlite": "^5.0.1",
-		"sqlite3": "^5.1.6",
 		"supabase": "^1.77.9"
 	}
 }
