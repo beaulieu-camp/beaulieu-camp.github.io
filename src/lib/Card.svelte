@@ -37,13 +37,13 @@
 
     .card {
         overflow: hidden;
-        margin-bottom: 1em;
         break-inside: avoid;
         background-color: var(--secondary);
         backdrop-filter: blur(4);
         padding: 1rem ;
         border-radius: 40px;
         box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
+        margin: 0 auto 1em auto;
     }
 
     div.flex {

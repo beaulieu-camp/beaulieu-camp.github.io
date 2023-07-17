@@ -46,6 +46,8 @@
 	.portfolio {
 		column-width: 20rem;
 		column-gap: 1em;
+		max-width: 70rem;
+		margin: auto ;
 	}
 	
 </style>
