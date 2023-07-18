@@ -11,7 +11,7 @@
     }   
 </script>
 
-<h1><a href="/">Beaulieu'niv</a></h1>
+<h1><a href="/">Beaulieu'Camp</a></h1>
 
 {#key data.pathname}
 	<div class="portfolio" in:customScale={{ duration: 750}}  >
