@@ -33,7 +33,7 @@ body {
 }
 
 
-.search.leaflet-control{
+.search{
     overflow: hidden;
     font-size: 1rem;
     color: var(--text);
@@ -44,7 +44,7 @@ body {
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
 }
 
-.search.leaflet-control > div:nth-child(1){
+.search > div:nth-child(1){
     display: flex;
 
     font-size: 1rem;
@@ -53,28 +53,28 @@ body {
     align-items: center;
 }
 
-.search.leaflet-control input {
+.search input {
     all:unset;
     flex:1;
     padding: 0.5rem 0;
 }
 
 
-.search.leaflet-control input ~ svg {
+.search input ~ svg {
     color: var(--text);
 }
 
-.search.leaflet-control > div:nth-child(2){
+.search > div:nth-child(2){
 
     overflow: hidden;
     display: none;
 }
 
-.search.leaflet-control:focus-within > div:nth-child(2){
+.search:focus-within > div:nth-child(2){
     display: block;
 }
 
-.search.leaflet-control > div:nth-child(2) > a{
+.search > div:nth-child(2) > a{
     all:unset;
     padding: 0.5rem 1rem;
     text-overflow: ellipsis;
@@ -82,16 +82,16 @@ body {
     overflow: hidden;
 }
 
-.search.leaflet-control > div:nth-child(2) > a:hover{
+.search > div:nth-child(2) > a:hover{
     background-color: var(--secondary);    
 }
 
-.leaflet-top.leaflet-left {
+.mapboxgl-ctrl-top-left {
     width: calc(100% - 20px);
     padding: 10px;
     margin:0;
 }
 
-.leaflet-top.leaflet-left > .leaflet-control{
+.mapboxgl-ctrl-top-left > .mapboxgl-ctrl.search{
     margin:0;
 }

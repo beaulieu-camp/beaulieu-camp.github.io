@@ -5,10 +5,9 @@
 </script>
 
 <Card title="Librairies">
-    <p>leaflet</p>
-    <p>leaflet-fullscreen</p>
     <p>sveltekit</p>
     <p>cheerio</p>
+    <p>mapbox</p>
     <p>openstreetmap</p>
     <p>cartocdn</p>
 </Card>
