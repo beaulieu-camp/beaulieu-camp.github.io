@@ -1,3 +1,4 @@
+
 export default class {
     geojson
     tag
@@ -11,7 +12,7 @@ export default class {
 
         info.onAdd = function(map) {
             this._div = L.DomUtil.create('div', 'search leaflet-control');
-            this._div.onmousedown = L.DomEvent.stopPropagation;
+            this._div.addEventListener("mousedown", L.DomEvent.stopPropagation);
             this._div.innerHTML = `<input><div></div>`;
             let div = this._div.children[1]
             this._div.children[0].addEventListener("input",(e) => search_this.search(e,search_this,div,map))
@@ -35,7 +36,7 @@ export default class {
             let a = document.createElement("a")
             a.style.display="block"
 
-            a.addEventListener("pointerdown",(e) => map.fitBounds(layer.getBounds())) ;
+            a.addEventListener("pointerdown",(e) => { map.fitBounds(layer.getBounds()) } ) ;
             a.href="#"
             a.innerText = layer.feature.properties["name"]
             div.appendChild(a)

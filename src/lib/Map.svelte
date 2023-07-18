@@ -65,28 +65,28 @@
             iconAnchor: [15, 15],
         });
 
-        // L.marker([48.122803,-1.640106], {icon:resto}).addTo(map); // etoile
+        L.marker([48.11983064878951, -1.6410448433312614], {icon:resto}).addTo(map); // B26
         L.marker([48.122703,-1.640056], {icon:resto}).addTo(map); // etoile
-
         L.marker([48.123273013829646, -1.6306942287729789], {icon:resto}).addTo(map); // iut
-        
         L.marker([48.122112160209,-1.6375839817504], {icon:resto}).addTo(map); // insa
-
-        // L.marker([48.1184286,-1.6359016], {icon:resto}).addTo(map); // astrolab
+        L.marker([48.11568200198034, -1.6383210005670557], {icon:resto}).addTo(map); // istic
         L.marker([48.1185083,-1.6358256], {icon:resto}).addTo(map); // astrolab
 
-        L.marker([48.11898960917824, -1.6363456435142263], {icon:biblio}).addTo(map); // biblio
+        L.marker([48.11898960917824, -1.6363456435142263], {icon:biblio}).addTo(map); // biblio b40
+        L.marker([48.11578908776368, -1.635894793911378], {icon:biblio}).addTo(map); // biblio b
+        L.marker([48.12063475718436, -1.6340607499578876], {icon:biblio}).addTo(map); // biblio insa
 
 
-        var circle = L.circle([42.7, 2.7], 500, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5
-        }).addTo(map);
+        // var circle = L.circle([42.7, 2.7], 500, {
+        //     color: 'red',
+        //     fillColor: '#f03',
+        //     fillOpacity: 0.5
+        // }).addTo(map);
 
-        navigator.geolocation.watchPosition((e) => {
-            circle.setLatLng([e.coords.latitude,e.coords.longitude])
-        })
+        // navigator.geolocation.watchPosition((e) => {
+        //     circle.setLatLng([e.coords.latitude,e.coords.longitude])
+        // })
+        
         // fsContainer.requestFullscreen
     })
 </script>
@@ -103,7 +103,7 @@
 <style>
 
 #mymap {
-    height: 30em;
+    height: 45em;
     width: 100%;
     border-radius: 2em;
     background-color: var(--background);
