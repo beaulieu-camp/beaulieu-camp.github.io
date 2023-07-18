@@ -53,8 +53,12 @@ body {
 .search.leaflet-control > div{
     background-color: white;
     overflow: hidden;
+    display: none;
 }
 
+.search.leaflet-control:focus-within > div{
+    display: block;
+}
 
 .search.leaflet-control > div > a{
     all:unset;

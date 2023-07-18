@@ -30,6 +30,7 @@
         var map = L.map("mymap", {
             center: [48.119,-1.638],
             zoom: 15,
+            zoomControl: false,
             fullscreenControl: true,
         });
 
@@ -86,12 +87,13 @@
         navigator.geolocation.watchPosition((e) => {
             circle.setLatLng([e.coords.latitude,e.coords.longitude])
         })
-
+        fsContainer.requestFullscreen
     })
-
+    $: fsContainer = null
+    console.log(fsContainer)
 </script>
   
-    <Card title="Carte Beaulieu">
+    <Card title="Carte Beaulieu" bind:this={fsContainer}>
         <div class="box">
             <div id="mymap"></div>
             <span>
