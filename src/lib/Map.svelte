@@ -5,7 +5,6 @@
     import 'mapbox-gl/dist/mapbox-gl.css';
     import mapboxgl from 'mapbox-gl';
     import { onMount } from 'svelte';
-    // mapboxgl.accessToken = 'pk.eyJ1IjoiYXF1YWJ4IiwiYSI6ImNqeWszMHQzeTA5aGwzaHBtaWR2bWZpd2oifQ.ik62iG1BWqL7xrdVJb2eBA';
     mapboxgl.accessToken = '123';
     
     import Card from '$lib/Card.svelte';
