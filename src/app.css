@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway&display=swap');
+
+
+:root {
+	--blue:#5A8DEE;
+	--green:#39DA8A;
+	--red:#F26061;	
+	--orange: #FDAC42;
+	--yellow:#FFCC00;
+	--lightblue:#74E0E5;
+	--purple:#A85ED6;
+
+	--vh: 100vh;
+
+
+    --primary:rgb(229, 239, 255);
+    --secondary:rgba(255, 255, 255, 0.5);
+    --text:#000000;
+}
+
+@media (prefers-color-scheme: dark){
+    :root	{
+        --primary:rgb(16, 26, 63);
+        --secondary:rgba(0, 0, 0, 0.5);
+        --text:white;
+	}
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.search{
+    overflow: hidden;
+    font-size: 1rem;
+    color: var(--text);
+    text-align: left;
+    width: clamp(1px,100%,40rem);
+    background-color: var(--primary);
+    border-radius: 1rem;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
+}
+
+.search > div:nth-child(1){
+    display: flex;
+
+    font-size: 1rem;
+    width: calc( 100% - 2rem );
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.search input {
+    all:unset;
+    flex:1;
+    padding: 0.5rem 0;
+}
+
+
+.search input ~ svg {
+    color: var(--text);
+}
+
+.search > div:nth-child(2){
+
+    overflow: hidden;
+    display: none;
+}
+
+.search:focus-within > div:nth-child(2){
+    display: block;
+}
+
+.search > div:nth-child(2) > a{
+    all:unset;
+    padding: 0.5rem 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.search > div:nth-child(2) > a:hover{
+    background-color: var(--secondary);    
+}
+
+.mapboxgl-ctrl-top-left {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin:0;
+}
+
+.mapboxgl-ctrl-top-left > .mapboxgl-ctrl.search{
+    margin:0;
+}
