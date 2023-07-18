@@ -1,15 +1,1 @@
-Projet :
-- faire un ENT plus joli
-- plus ergonomique
-- avec plus d'infos
-
-Lien d'accès : https://aquabx.github.io/univ
-
-to do list :
-- finir la carte
-- peaufiner le design
-- ajouter des fontionalités
-
-Toute suggestion ou aide externe est la bienvenue. 
-
-![ScreenShot](screenshot.png)
+![image](https://github.com/AquaBx/univ/assets/35542432/3ec4ff3f-9684-4723-9c32-26b2ecfc61dc)
