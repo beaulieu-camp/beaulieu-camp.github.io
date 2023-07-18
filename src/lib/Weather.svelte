@@ -37,18 +37,23 @@
 </script>
 
 <Card title="Méteo Beaulieu">
+    <span>
+        <img draggable="false" src={icon} alt="icon"/>
+        <div>
+            <h1> {temperature}° </h1>
+            <p> {desc} </p>
+        </div>
+    </span>
 
-    <img src={icon} alt="icon"/>
-    <div>
-        <h1> {temperature}° </h1>
-        <p> {desc} </p>
-    </div>
 </Card>
 
 
 
 <style>
-
+    span {
+        display: flex;
+        align-items: center;
+    }
 
     div {
         flex:1;

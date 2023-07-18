@@ -36,6 +36,7 @@
     }
 
     .card {
+        user-select: none;
         overflow: hidden;
         break-inside: avoid;
         background-color: var(--secondary);
@@ -49,6 +50,7 @@
     div.flex {
         display: flex;
         align-items: center;
+        flex-direction: column;
     }
     
 </style>

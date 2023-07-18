@@ -39,7 +39,7 @@ export default class {
             a.style.display="block"
 
             a.addEventListener("pointerdown",(e) => { map.fitBounds(layer.getBounds()) } ) ;
-            a.href="#"
+            a.tabIndex = "-1"
             a.innerText = layer.feature.properties["name"]
             div.appendChild(a)
         }

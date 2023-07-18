@@ -20,6 +20,7 @@
 {/key}
 
 <h3>Made with ❤️ by <a href="https://www.aquabx.ovh">AquaBx</a></h3>
+<h3><a href="/infos">Mentions légales</a></h3>
 
 <style>
 
@@ -48,6 +49,7 @@
 		column-gap: 1em;
 		max-width: 70rem;
 		margin: auto ;
+		min-height: calc( 100% - 6.625rem);
 	}
 	
 </style>
