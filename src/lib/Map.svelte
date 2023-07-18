@@ -1,8 +1,8 @@
 <script>
     import Card from "./Card.svelte"
-    import "leaflet/dist/leaflet.css"
     import { onMount } from "svelte";
-    
+    import "leaflet/dist/leaflet.css"
+    import "leaflet-fullscreen/dist/leaflet.fullscreen.css"
     
     function changelayer(event,map){
         let style
@@ -20,12 +20,15 @@
 
 
     onMount(async() => {
-        const L = await import('leaflet');
+        const L = await import("leaflet")
+        await import("leaflet-fullscreen")
+
         const geojson = await import('./geojson.json')
 
         var map = L.map("mymap", {
             center: [48.119,-1.638],
             zoom: 15,
+            fullscreenControl: true,
         });
 
         let query = window.matchMedia('(prefers-color-scheme: dark)')
@@ -87,7 +90,6 @@
             console.log(e.coords,e,circle)
             circle.setLatLng([e.coords.latitude,e.coords.longitude])
         })
-        
     })
 
 </script>
