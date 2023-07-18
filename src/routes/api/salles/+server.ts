@@ -10,8 +10,5 @@
         },
         "method": "GET",
     });
-
-
-    console.log(await req.text())
 })()
 

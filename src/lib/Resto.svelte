@@ -12,26 +12,22 @@
 </script>
 
 <Card title="Resto U Beaulieu">
-    <div>
+    <table>
         {#each data as resto}
-                
-                <table>
-                    <tr><td colspan="7">{resto["nom"]}</td></tr>
-                    <tr>
-                        {#each resto["ouverture"] as ouv }
-                            <td>
-                                {#if ouv = "000"}
-                                    ❌
-                                {:else}
-                                    ✅
-                                {/if}
-                            </td>
-                        {/each}
-                    </tr>
-                </table>
+            <tr><td colspan="7">{resto["nom"]}</td></tr>
+            <tr>
+                {#each resto["ouverture"] as ouv }
+                    <td>
+                        {#if ouv = "000"}
+                            ❌
+                        {:else}
+                            ✅
+                        {/if}
+                    </td>
+                {/each}
+            </tr>
         {/each}
-    </div>
-
+    </table>
 </Card>
 
 

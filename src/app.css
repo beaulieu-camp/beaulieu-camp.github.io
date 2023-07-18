@@ -95,3 +95,7 @@ body {
 .mapboxgl-ctrl-top-left > .mapboxgl-ctrl.search{
     margin:0;
 }
+
+table {
+    width:100%;
+}

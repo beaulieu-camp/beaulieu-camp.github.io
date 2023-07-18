@@ -1,25 +1,17 @@
 <script>
     export let title
-    export let link
 
 </script>
 
 
-{#if link }
-    <div class="card" href={link}>
-        <h3>{title}</h3>
-        <div class="flex">
-            <slot></slot>
-        </div>
+
+<div class="card">
+    <h3>{title}</h3>
+    <div class="flex">
+        <slot></slot>
     </div>
-{:else}
-    <div class="card">
-        <h3>{title}</h3>
-        <div class="flex">
-            <slot></slot>
-        </div>
-    </div>
-{/if}
+</div>
+
 
 
 
