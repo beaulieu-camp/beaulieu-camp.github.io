@@ -31,9 +31,9 @@
             center: [48.119,-1.638],
             zoom: 15,
             zoomControl: false,
-            fullscreenControl: true,
         });
 
+        map.addControl(new L.Control.Fullscreen({position: 'bottomright'}));
 
         let searchLayer = L.geoJSON(geojson).setStyle({ 
             weight: 0,
@@ -86,7 +86,7 @@
         // navigator.geolocation.watchPosition((e) => {
         //     circle.setLatLng([e.coords.latitude,e.coords.longitude])
         // })
-        
+
         // fsContainer.requestFullscreen
     })
 </script>

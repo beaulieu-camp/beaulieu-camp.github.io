@@ -6,16 +6,16 @@ export default class {
         this.geojson = geojson
         this.tag = tag
 
-        const info = L.control();
+        const info = L.control({position: 'topleft'});
 
         let search_this = this
 
         info.onAdd = function(map) {
-            this._div = L.DomUtil.create('div', 'search leaflet-control');
+            this._div = L.DomUtil.create('div', 'search');
             this._div.addEventListener("mousedown", L.DomEvent.stopPropagation);
-            this._div.innerHTML = `<input><div></div>`;
+            this._div.innerHTML = `<div><input/><img src='search.svg'></div><div></div>`;
             let div = this._div.children[1]
-            this._div.children[0].addEventListener("input",(e) => search_this.search(e,search_this,div,map))
+            this._div.querySelector("input").addEventListener("input",(e) => search_this.search(e,search_this,div,map))
             return this._div;
         };
 
