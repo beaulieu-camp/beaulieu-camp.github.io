@@ -87,13 +87,11 @@
         navigator.geolocation.watchPosition((e) => {
             circle.setLatLng([e.coords.latitude,e.coords.longitude])
         })
-        fsContainer.requestFullscreen
+        // fsContainer.requestFullscreen
     })
-    $: fsContainer = null
-    console.log(fsContainer)
 </script>
   
-    <Card title="Carte Beaulieu" bind:this={fsContainer}>
+    <Card title="Carte Beaulieu">
         <div class="box">
             <div id="mymap"></div>
             <span>
