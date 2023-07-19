@@ -1,5 +1,5 @@
-<script>
-    export let title
+<script lang="ts">
+    export let title:String
 
 </script>
 
@@ -37,6 +37,7 @@
         border-radius: 2.5rem;
         box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
         margin: 0 auto 1em auto;
+        transition: height 0.25s ease-in;
     }
 
     div.flex {

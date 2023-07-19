@@ -9,8 +9,8 @@
  
 
 <Weather></Weather>
-<Star></Star>
 <Salles></Salles>
-<Resto></Resto>
 <Map></Map>
+<Star></Star>
+<Resto></Resto>
 

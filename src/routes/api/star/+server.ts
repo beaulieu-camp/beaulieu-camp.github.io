@@ -20,7 +20,6 @@ export async function GET() {
             item.fields.coordonnees,
             item.fields.nomcourtligne,
             item.fields.depart,
-            item.fields.arrivee,
             item.fields.destination,
 
 

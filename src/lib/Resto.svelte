@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import Card from "./Card.svelte"
     import { onMount } from "svelte";
 

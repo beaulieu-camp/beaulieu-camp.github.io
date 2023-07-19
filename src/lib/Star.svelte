@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { onMount } from "svelte";
     import Card from "./Card.svelte";
 
@@ -20,15 +20,14 @@
     <table>
         {#each Object.values(data) as item}
             <tr>
-                <td colspan="4">{item.nom}</td>
+                <td colspan="3">{item.nom}</td>
             </tr>
             {#each item.dessertes as bus}
                 <tr>
                     <td>{bus[1]}</td>
                     <td>{date_parse(bus[2])}</td>
-                    <td>{date_parse(bus[3])}</td>
 
-                    <td>{bus[4]}</td>
+                    <td>{bus[3]}</td>
                 </tr>
             {/each}
         {/each}
