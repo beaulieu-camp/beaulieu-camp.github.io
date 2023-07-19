@@ -3,7 +3,7 @@
 
 </script>
 
-    <Card title="Salles libres" link="salles">
+    <Card title="Salles libres">
         <a href="/salles">
             Voir la disponibilité des salles
         </a>
