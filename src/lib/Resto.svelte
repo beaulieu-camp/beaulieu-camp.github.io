@@ -11,7 +11,7 @@
 
 </script>
 
-<Card title="Resto U Beaulieu" taille="square">
+<Card title="Restorants Universitaire" taille="square">
     <table>
         {#each data as resto}
             <tr><td colspan="7">{resto["nom"]}</td></tr>

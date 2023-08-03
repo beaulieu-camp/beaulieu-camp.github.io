@@ -47,14 +47,21 @@
     .square{
         aspect-ratio: 1/1;
     }
-    .mini{
+    .meteo{
         height: 12.5rem;
+        overflow: hidden;
     }
     .semilarge{
         aspect-ratio: 2/3;
     }
     .large{
         aspect-ratio: 1/2;
+    }
+    .demi{
+        aspect-ratio: 2/1;
+    }
+    .third{
+        aspect-ratio: 5/2;
     }
     
 </style>
