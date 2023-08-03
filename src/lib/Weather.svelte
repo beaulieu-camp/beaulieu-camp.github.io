@@ -37,9 +37,9 @@
 
 </script>
 
-<Card title="Méteo Beaulieu">
+<Card title="Méteo Beaulieu" taille="mini">
     <span>
-        <img draggable="false" src={icon} alt="icon"/>
+        <img draggable="false" src={icon} alt="icon" fetchPriority="high"/>
         <div>
             <h1> {temperature}° </h1>
             <p> {desc} </p>
@@ -64,14 +64,14 @@
         text-align: right;
     }
 
-    div > h1 {
+    h1 {
         font-size: 4rem;
         margin: 0;
         font-weight: bold;
         line-height: 4.5rem;
     }
     
-    div > p {
+    p {
         margin: 0;
         font-size: 1.5rem;
     }

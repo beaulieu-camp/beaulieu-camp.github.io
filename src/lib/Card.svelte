@@ -1,11 +1,13 @@
 <script lang="ts">
-    export let title:String
+
+export let title:String
+    export let taille:String
 
 </script>
 
 
 
-<div class="card">
+<div class="card {taille}">
     <h3>{title}</h3>
     <div class="flex">
         <slot></slot>
@@ -16,20 +18,15 @@
 
 
 <style>
-    a[href] {
-        all:unset;
-        cursor:pointer;
-    }
 
     .card > h3 {
-        
         margin:0 0 0.5em 0;
         text-align: center;
     }
 
     .card {
         user-select: none;
-        overflow: hidden;
+        overflow: auto;
         break-inside: avoid;
         background-color: var(--secondary);
         backdrop-filter: blur(4);
@@ -44,6 +41,20 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        height: calc(100% - 3rem);
+    }
+
+    .square{
+        aspect-ratio: 1/1;
+    }
+    .mini{
+        height: 12.5rem;
+    }
+    .semilarge{
+        aspect-ratio: 2/3;
+    }
+    .large{
+        aspect-ratio: 1/2;
     }
     
 </style>

@@ -15,7 +15,7 @@
     }
 </script>
 
-<Card title="Réseau Star">
+<Card title="Réseau Star" taille="semilarge">
 
     <table>
         {#each Object.values(data) as item}

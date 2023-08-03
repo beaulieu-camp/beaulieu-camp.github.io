@@ -5,13 +5,13 @@
     let data = []
 
     onMount(async()=>{
-        const response = await fetch('api/resto')
+        const response = await fetch('https://beaulieu-camp.github.io/resto-u/index.json')
         data = await response.json()
     })
 
 </script>
 
-<Card title="Resto U Beaulieu">
+<Card title="Resto U Beaulieu" taille="square">
     <table>
         {#each data as resto}
             <tr><td colspan="7">{resto["nom"]}</td></tr>
@@ -33,15 +33,5 @@
 
 
 <style>
-
-
-    div {
-        flex:1;
-        display: flex;
-        flex-direction: column;
-
-        text-align: left;
-    }
-
 
 </style>

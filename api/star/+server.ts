@@ -1,5 +1,28 @@
 import {json} from "@sveltejs/kit"
 
+type fields = {
+    coordonnees ?: number[],
+    nomcourtligne ?: string,
+    depart ?: string,
+    destination ?: string,
+    idarret?:string
+}
+
+type star_resp = {
+    records: [
+        {
+            fields : fields
+        }
+    ]
+}
+
+type resp = {
+                [key: string]: {
+                    nom : string,
+                    dessertes: string[][]
+                }
+            }
+
 export async function GET() {
 
     let url = "https://data.explore.star.fr/api/records/1.0/search/"
@@ -9,7 +32,7 @@ export async function GET() {
     let resp = await fetch(url)
     let data = await resp.json()
 
-    let obj_ret = {}
+    let obj_ret:resp = {}
 
     for (let item of data.records ){
         let id_ar = item.fields.idarret

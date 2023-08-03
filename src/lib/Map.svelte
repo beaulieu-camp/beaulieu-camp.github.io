@@ -1,9 +1,7 @@
 <script lang="ts">
-
-
-
     import 'mapbox-gl/dist/mapbox-gl.css';
-    import mapboxgl from 'mapbox-gl';
+    import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+
     import { onMount } from 'svelte';
     mapboxgl.accessToken = '123';
     
@@ -44,6 +42,7 @@
     
         const map = new mapboxgl.Map({
             container: 'map',
+            projection: 'mercator',
             style: {
                 'version': 8,
                 'sources': {
@@ -82,19 +81,20 @@
                     {
                         'id': 'geojson-layer',
                         'type': 'fill-extrusion',
-                        'source': 'geojson', // reference the data source
+                        'source': 'geojson', // reference the data source 
                         'paint': {
-                            'fill-extrusion-color': '#0080ff', // ['get', 'color']
-                            'fill-extrusion-height': 10,
+                            'fill-extrusion-color': '#2265cc', // ['get', 'color'] ['get','Z_MIN_SOL']
                             'fill-extrusion-base': 0,
+                            'fill-extrusion-height':16, // ['+', ['get','HAUTEUR'], 0]
                             'fill-extrusion-opacity': 1
                         }
                     }
                 ]
             },
             center: [-1.638,48.119], // starting position [lng, lat]
-            zoom:15
-            
+            zoom:15,
+            maxZoom: 18,
+            minZoom: 14            
         });
     
         map.addControl(new mapboxgl.FullscreenControl(),'bottom-right');
@@ -151,9 +151,8 @@
     })
     </script>
     
-    <Card title="Carte Beaulieu">
+    <Card title="Carte Beaulieu" taille="large">
         <div id="map"></div>
-
     </Card>
     
     
@@ -164,7 +163,7 @@
             top: 0; 
             bottom: 0; 
             width: 100%;
-            height: 35rem; 
+            height: 100%; 
             border-radius: 1.7rem;
         }
     
