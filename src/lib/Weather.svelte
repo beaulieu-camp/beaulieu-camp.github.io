@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
     import Card from "./Card.svelte"
     import { onMount } from "svelte";
 
-    let icon = ""
+    let icon = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
     let desc = ""
     let code = ""
     let temperature = ""
@@ -34,11 +34,12 @@
         case '50d' : icon = '/weather/.svg'   ; desc= ""         ;break;
         case '50n' : icon = '/weather/.svg'   ; desc= ""         ;break;
     }
+
 </script>
 
-<Card title="Méteo Beaulieu">
+<Card title="Méteo Beaulieu" taille="mini">
     <span>
-        <img draggable="false" src={icon} alt="icon"/>
+        <img draggable="false" src={icon} alt="icon" fetchPriority="high"/>
         <div>
             <h1> {temperature}° </h1>
             <p> {desc} </p>
@@ -63,14 +64,14 @@
         text-align: right;
     }
 
-    div > h1 {
+    h1 {
         font-size: 4rem;
         margin: 0;
         font-weight: bold;
         line-height: 4.5rem;
     }
     
-    div > p {
+    p {
         margin: 0;
         font-size: 1.5rem;
     }

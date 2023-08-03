@@ -11,6 +11,10 @@
     }   
 </script>
 
+<svelte:head>
+	<title>Beaulieu'Camp - {data.pathname}</title>
+</svelte:head>
+
 <h1><a href="/">Beaulieu'Camp</a></h1>
 
 {#key data.pathname}
