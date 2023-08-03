@@ -37,7 +37,7 @@
 
 </script>
 
-<Card title="Méteo Beaulieu" taille="mini">
+<Card title="Méteo Beaulieu" taille="meteo">
     <span>
         <img draggable="false" src={icon} alt="icon" fetchPriority="high"/>
         <div>
