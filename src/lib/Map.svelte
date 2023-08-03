@@ -37,8 +37,8 @@
     
     onMount(async() => {
     
-        let geojson = await import('$lib/geojson.json')
-        let def = await import('./search.ts')
+        let geojson = await import('../includes/geojson.json')
+        let def = await import('../includes/search.ts')
     
         const map = new mapboxgl.Map({
             container: 'map',

@@ -18,10 +18,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@supabase/supabase-js": "^2.26.0",
-		"cheerio": "^1.0.0-rc.12",
-		"mapbox-gl": "^2.15.0",
-		"pocketbase": "^0.15.3",
-		"supabase": "^1.77.9"
+		"mapbox-gl": "^2.15.0"
 	}
 }
