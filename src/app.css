@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway&display=swap');
-
-
 :root {
 	--blue:#5A8DEE;
 	--green:#39DA8A;
@@ -94,4 +91,8 @@ body {
 
 .mapboxgl-ctrl-top-left > .mapboxgl-ctrl.search{
     margin:0;
+}
+
+table {
+    width:100%;
 }

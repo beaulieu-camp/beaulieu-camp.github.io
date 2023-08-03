@@ -5,10 +5,14 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"test": "vite preview --port 80"
+		"test": "vite preview --port 80",
+		"prod": "vite build && vite preview --port 80 --host",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^1.0.3",
+		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.22.3",
 		"svelte": "^4.0.5"
 	},
@@ -17,6 +21,7 @@
 		"@supabase/supabase-js": "^2.26.0",
 		"cheerio": "^1.0.0-rc.12",
 		"mapbox-gl": "^2.15.0",
+		"pocketbase": "^0.15.3",
 		"supabase": "^1.77.9"
 	}
 }
