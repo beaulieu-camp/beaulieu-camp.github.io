@@ -1,6 +1,6 @@
 <script lang="ts">
 
-export let title:String
+    export let title:String
     export let taille:String
 
 </script>
