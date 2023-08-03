@@ -23,8 +23,11 @@
 	</div>
 {/key}
 
-<h3>Made with ❤️ by <a href="https://www.aquabx.ovh">AquaBx</a></h3>
-<h3><a href="/infos">Mentions légales</a></h3>
+<footer>
+	<h4><a href="https://discord.gg/4T6CnF2qDF">Une idée ? Rejoins le Discord !</a></h4>
+	<h4>Made with ❤️ by <a href="https://www.aquabx.ovh">AquaBx</a></h4>
+	<h4><a href="/infos">Mentions légales</a></h4>
+</footer>
 
 <style>
 
@@ -42,11 +45,19 @@
 		all:unset;
 	}
 
-	h1,h3 {
+	h1 {
 
 		text-align: center;
 		
 	}	
+
+	footer {
+		display: flex;
+		width: 100%;
+		gap:1em;
+		justify-content: space-evenly
+	}
+
 	
 	.portfolio {
 		column-width: 20rem;

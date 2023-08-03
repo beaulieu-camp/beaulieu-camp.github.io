@@ -6,7 +6,6 @@
 
 <Card title="Librairies">
     <p>sveltekit</p>
-    <p>cheerio</p>
     <p>mapbox</p>
     <p>openstreetmap</p>
     <p>cartocdn</p>
