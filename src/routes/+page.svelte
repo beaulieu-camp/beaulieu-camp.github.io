@@ -6,7 +6,7 @@
   import Star from "$lib/Star.svelte";
 </script>
 
-<!-- <Weather></Weather> -->
+<Weather></Weather>
 <Salles></Salles>
 <Map></Map>
 <!-- <Star></Star> -->

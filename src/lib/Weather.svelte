@@ -8,7 +8,7 @@
     let temperature = ""
 
     onMount(async()=>{
-        const response = await fetch('api/weather')
+        const response = await fetch('https://beaulieu-camp.github.io/meteo/index.json')
         let data = await response.json()
         temperature = data.temperature
         code = data.code
