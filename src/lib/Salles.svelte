@@ -1,6 +1,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import Card from "./Card.svelte";
+    import { salleEvents,salleLibres,getSalles } from "salles_module";
+
 
     let date = (new Date).getDate()
     $: salles = {}
@@ -14,7 +16,20 @@
     }
 
     onMount( async() => {
-        salles = await (await import('../includes/salles.ts')).default()
+
+
+        for (let salle of await getSalles()) {
+
+            let code = salle[2]
+            let date = 1662981301 //parseInt(Date.now()/1000)
+
+            salles[ code ] = await salleLibres(code,date)
+
+            salles[ code ]["batiment"] = salle[0]
+            salles[ code ]["salle"] = salle[1]
+
+        }
+
     })
 
 </script>
