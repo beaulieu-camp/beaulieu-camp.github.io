@@ -14,7 +14,7 @@
     }
 
     onMount( async() => {
-        salles = await (await import('./salles.ts')).default()
+        salles = await (await import('../includes/salles.ts')).default()
     })
 
 </script>
