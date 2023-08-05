@@ -17,7 +17,9 @@
 	<title>Beaulieu'Camp - {data.pathname}</title>
 </svelte:head>
 
-<h1><a href="/">Beaulieu'Camp</a></h1>
+<header>
+	<a href="/">Beaulieu'Camp</a>
+</header>
 
 {#key data.pathname}
 	<div class="portfolio" in:customScale={{ duration: 750}}  >
@@ -29,16 +31,20 @@
 
 <style>
 
-	h1 {
+	header {
 		text-align: center;
-	}	
+		font-size: 2.25rem;
+		letter-spacing: 0.1em;
+		font-weight: bold;
+		margin: 16px 0 ;
+	}
 
 	.portfolio {
-		column-width: 20rem;
-		column-gap: 1em;
-		max-width: 70rem;
+		column-width: 320px;
+		column-gap: 16px;
+		max-width: 1120px;
 		margin: auto ;
-		min-height: calc( 100vh - 11.5425rem );
+		min-height: calc( 100vh - 184px );
 	}
 	
 </style>

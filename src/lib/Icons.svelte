@@ -16,7 +16,7 @@
 <style>
     svg {
         fill : var(--text);
-        width:2rem;
+        width: 32px;
         aspect-ratio : 1/1;
     }
 </style>
