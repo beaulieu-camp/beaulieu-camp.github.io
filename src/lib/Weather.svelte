@@ -80,8 +80,8 @@
     
     img {
         aspect-ratio: 1/1;
-        height: 100%;
-        transform: scale(2.2);
+        height: 100px;
+        transform: scale(2.5);
     }
 
 </style>

@@ -35,6 +35,9 @@
         margin: 0 auto 16px auto;
         transition: height 0.25s ease-in;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        max-width: 350px;
     }
 
     div.flex {
@@ -42,13 +45,13 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        height: calc( 100% - 48px );
+        height: 100%;
         gap : 16px;
         border-radius: 16px;
     }
 
     .meteo > div.flex{
-        overflow: unset;
+        overflow:unset;
     }
     .square{
         aspect-ratio: 1/1;
