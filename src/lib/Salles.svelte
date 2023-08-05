@@ -21,13 +21,11 @@
         for (let salle of await getSalles()) {
 
             let code = salle[2]
-            let date = 1662981301 //parseInt(Date.now()/1000)
-
+            let date = parseInt(Date.now()/1000)
             salles[ code ] = await salleLibres(code,date)
 
             salles[ code ]["batiment"] = salle[0]
             salles[ code ]["salle"] = salle[1]
-
         }
 
     })
@@ -45,9 +43,17 @@
                 <td>
                     {salle.salle}
                 </td>
-                <td>
-                    {salle.state } {stringify_date(salle.until)}
-                </td>
+                {#if salle.error}
+                    <td>
+                        {salle.error}
+                    </td>
+                {:else}
+
+                    <td>
+                        {salle.state } {stringify_date(salle.until)}
+                    </td>
+                {/if}
+                
             </tr>   
         { /each }
     </table>
