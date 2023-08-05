@@ -3,10 +3,11 @@
 </script>
 
 <footer>
-	<a href="https://discord.gg/4T6CnF2qDF"><Icons name="discord"/></a>
-	<a href="https://github.com/beaulieu-camp"><Icons name="github"/></a>
-	<h4>Made with ❤️ by <a href="https://www.aquabx.ovh">AquaBx</a></h4>
-	<h4><a href="/infos">Mentions légales</a></h4>
+	<a href="/"><Icons name="home"/>Home</a>
+	<a target="_blank" href="https://discord.gg/4T6CnF2qDF"><Icons name="discord"/>Discord</a>
+	<a target="_blank" href="https://github.com/beaulieu-camp"><Icons name="github"/>Github</a>
+	<a href="/infos"><Icons name="info"/>Infos</a>
+
 </footer>
 
 <style>
@@ -17,8 +18,14 @@
 		gap:2em;
 		justify-content: center;
 		align-items: center;
-		position: static;
-		bottom: 0;
+		margin: 1em 0;
+	}
+
+	a {
+		display: flex;
+		flex-direction: column;align-items: center;
+		gap : 0.3em;
+		width: 4em;
 	}
 
 </style>

@@ -28,7 +28,7 @@ body {
     color: var(--text);
     font-family: 'Poppins', sans-serif;
     overflow: overlay;
-    margin: 0;
+    margin : 0 1rem;
 }
 
 a[href] {
@@ -123,4 +123,8 @@ a:visited{
         background-color: var(--text);
     }
 
+}
+
+body > div {
+    overflow: auto;
 }

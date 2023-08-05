@@ -38,7 +38,7 @@
 		column-gap: 1em;
 		max-width: 70rem;
 		margin: auto ;
-		min-height: calc( 100vh - 9.9rem);
+		min-height: calc( 100vh - 11.5425rem );
 	}
 	
 </style>
