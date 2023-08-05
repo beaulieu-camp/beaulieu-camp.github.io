@@ -37,9 +37,9 @@
 
 </script>
 
-<Card title="Méteo Beaulieu" taille="meteo">
+<Card title="Méteo Beaulieu" taille="meteo demi">
     <span>
-        <img draggable="false" src={icon} alt="icon" fetchPriority="high"/>
+        <img draggable="false" src={icon} alt="icon"/>
         <div>
             <h1> {temperature}° </h1>
             <p> {desc} </p>
@@ -54,6 +54,8 @@
     span {
         display: flex;
         align-items: center;
+        height: 100%;
+        width: 15rem;
     }
 
     div {
@@ -77,9 +79,9 @@
     }
     
     img {
-        width: 10rem;
-        height: 10rem;
-        transform: scale(1.6);
+        aspect-ratio: 1/1;
+        height: 100%;
+        transform: scale(2.2);
     }
 
 </style>
