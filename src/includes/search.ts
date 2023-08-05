@@ -2,7 +2,6 @@ let svg = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" x
 
 function denoise(str:string){
     let normalized = str.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()
-    console.log(str,normalized)
     return normalized
 }
 
