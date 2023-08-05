@@ -30,7 +30,7 @@
         background-color: var(--secondary);
         backdrop-filter: blur(4);
         padding: 16px;
-        border-radius: 40px;
+        border-radius: 24px;
         box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
         margin: 0 auto 16px auto;
         transition: height 0.25s ease-in;
