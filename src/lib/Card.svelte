@@ -20,7 +20,7 @@
 
     .card > header {
         text-align: center;
-        padding-bottom:0.5rem;
+        padding-bottom:8px;
         font-size: 1.5rem;
     }
 
@@ -29,10 +29,10 @@
         break-inside: avoid;
         background-color: var(--secondary);
         backdrop-filter: blur(4);
-        padding: 1rem;
-        border-radius: 2.5rem;
+        padding: 16px;
+        border-radius: 24px;
         box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
-        margin: 0 auto 1em auto;
+        margin: 0 auto 16px auto;
         transition: height 0.25s ease-in;
         overflow: hidden;
     }
@@ -42,12 +42,9 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        height: calc( 100% - 3rem );
-        gap : 1em;
-        border-radius: 1rem;
-
-        scrollbar-gutter: stable;
-    scrollbar-gutter: stable both-edges;
+        height: calc( 100% - 48px );
+        gap : 16px;
+        border-radius: 16px;
     }
 
     .meteo > div.flex{

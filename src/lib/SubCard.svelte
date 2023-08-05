@@ -15,9 +15,9 @@ export let color : string
     .subcard {
         background-color: var(--secondary);
         backdrop-filter: blur(4);
-        padding: 1rem ;
-        border-radius: 1rem;
-        width: calc( 100% - 2rem );
+        padding: 16px ;
+        border-radius: 16px;
+        width: calc( 100% - 32px );
     }
 
     .red {
