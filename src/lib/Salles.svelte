@@ -1,13 +1,19 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import Card from "./Card.svelte";
+    import SubCard from "./SubCard.svelte";
     import { salleEvents,salleLibres,getSalles } from "salles_module";
 
 
-    let date = (new Date).getDate()
-    $: salles = {}
+    type sallestype = {
+        [code:string]:{ error:string,batiment?:string,salle?:string } | { state:string,until:number,batiment?:string,salle?:string }
+    }            
 
-    function stringify_date(time){
+
+    let date = (new Date).getDate()
+    let salles:sallestype = {}
+
+    function stringify_date(time:number){
         if (time == undefined) return 'updating';
 
         let date = new Date(time*1000)
@@ -21,7 +27,7 @@
         for (let salle of await getSalles()) {
 
             let code = salle[2]
-            let date = parseInt(Date.now()/1000)
+            let date = Math.floor(Date.now()/1000)
             salles[ code ] = await salleLibres(code,date)
 
             salles[ code ]["batiment"] = salle[0]
@@ -30,46 +36,21 @@
 
     })
 
+    function color(bool:boolean){
+        return bool ? "green" : "red"
+    }
+
 </script>
 
 <Card title="Salles Ouvertes" taille="square">
 
-    <table>
-        { #each Object.values(salles) as salle }
-            <tr>
-                <td>
-                    {salle.batiment}
-                </td>
-                <td>
-                    {salle.salle}
-                </td>
-                {#if salle.error}
-                    <td>
-                        {salle.error}
-                    </td>
-                {:else}
-
-                    <td>
-                        {salle.state } {stringify_date(salle.until)}
-                    </td>
-                {/if}
-                
-            </tr>   
-        { /each }
-    </table>
+    { #each Object.values(salles) as salle }
+        {#if salle.error}
+            <SubCard title={salle.batiment + " " + salle.salle} color="yellow"> {salle.error} </SubCard>
+        {:else if salle.state}
+            <SubCard title={salle.batiment + " " + salle.salle} color="green"> {salle.state } {stringify_date(salle.until)} </SubCard>
+        {:else}
+            <SubCard title={salle.batiment + " " + salle.salle} color="red"> {salle.state } {stringify_date(salle.until)} </SubCard>
+        {/if}
+    { /each }
 </Card>
-    
-<style>
-    span {
-        width: 100%;
-        text-align: center;
-    }
-
-    span.green {
-        color: rgb(26, 196, 77)
-    }
-
-    span.red {
-        color: rgb(204, 13, 13)
-    }
-</style>

@@ -4,16 +4,19 @@
 
 </script>
 
-<Card title="Librairies">
+<Card title="Librairies" taille="">
     <p>sveltekit</p>
     <p>mapbox</p>
     <p>openstreetmap</p>
     <p>cartocdn</p>
 </Card>
-<Card title="Icones">
+<Card title="Icones" taille="">
     <p>css.gg</p>
     <p>fontawesome</p>
 </Card>
-<Card title="Développeurs">
+<Card title="Développeurs" taille="">
     <p>AquaBx</p>
+</Card>
+<Card title="Infos" taille="">
+    <p>Non affilié avec l'Université de Rennes</p>
 </Card>

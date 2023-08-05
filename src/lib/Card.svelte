@@ -8,7 +8,7 @@
 
 
 <div class="card {taille}">
-    <h3>{title}</h3>
+    <header>{title}</header>
     <div class="flex">
         <slot></slot>
     </div>
@@ -16,43 +16,43 @@
 
 
 
-
 <style>
 
-    .card > h3 {
-        margin:0 0 0.5em 0;
+    .card > header {
         text-align: center;
+        padding-bottom:0.5rem;
+        font-size: 1.5rem;
     }
 
     .card {
         user-select: none;
-        overflow: auto;
         break-inside: avoid;
         background-color: var(--secondary);
         backdrop-filter: blur(4);
-        padding: 1rem ;
+        padding: 1rem;
         border-radius: 2.5rem;
         box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
         margin: 0 auto 1em auto;
         transition: height 0.25s ease-in;
+        overflow: hidden;
     }
 
     div.flex {
+        overflow: auto;
         display: flex;
         align-items: center;
         flex-direction: column;
-        height: calc(100% - 3rem);
+        height: calc( 100% - 3rem );
+        gap : 1em;
+        border-radius: 1rem;
     }
 
+
+    .meteo > div.flex{
+        overflow: unset;
+    }
     .square{
         aspect-ratio: 1/1;
-    }
-    .meteo{
-        height: 12.5rem;
-        overflow: hidden;
-    }
-    .semilarge{
-        aspect-ratio: 2/3;
     }
     .large{
         aspect-ratio: 1/2;
@@ -60,8 +60,4 @@
     .demi{
         aspect-ratio: 2/1;
     }
-    .third{
-        aspect-ratio: 5/2;
-    }
-    
 </style>
