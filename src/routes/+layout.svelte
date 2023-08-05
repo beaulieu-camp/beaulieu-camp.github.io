@@ -1,6 +1,8 @@
 <script>
 	import '../app.css';
 	export let data
+
+	import Footer from '$lib/Footer.svelte';
     import { cubicOut } from 'svelte/easing';
 	function customScale(node, options) {
         return {
@@ -23,48 +25,20 @@
 	</div>
 {/key}
 
-<footer>
-	<h4><a href="https://discord.gg/4T6CnF2qDF">Une idée ? Rejoins le Discord !</a></h4>
-	<h4>Made with ❤️ by <a href="https://www.aquabx.ovh">AquaBx</a></h4>
-	<h4><a href="/infos">Mentions légales</a></h4>
-</footer>
+<Footer/>
 
 <style>
 
-	a[href] {
-		all:unset;
-		cursor: pointer;
-		transition: 0.3s;
-	}
-
-	a[href]:hover {
-		opacity: 0.5;
-	}
-
-	a:visited{
-		all:unset;
-	}
-
 	h1 {
-
 		text-align: center;
-		
 	}	
 
-	footer {
-		display: flex;
-		width: 100%;
-		gap:1em;
-		justify-content: space-evenly
-	}
-
-	
 	.portfolio {
 		column-width: 20rem;
 		column-gap: 1em;
 		max-width: 70rem;
 		margin: auto ;
-		min-height: calc( 100% - 6.625rem);
+		min-height: calc( 100vh - 9.9rem);
 	}
 	
 </style>

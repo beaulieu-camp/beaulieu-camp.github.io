@@ -28,6 +28,21 @@ body {
     color: var(--text);
     font-family: 'Poppins', sans-serif;
     overflow: overlay;
+    margin: 0;
+}
+
+a[href] {
+    all:unset;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+a[href]:hover {
+    opacity: 0.5;
+}
+
+a:visited{
+    all:unset;
 }
 
 .search{
