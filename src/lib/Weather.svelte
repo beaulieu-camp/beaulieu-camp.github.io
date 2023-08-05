@@ -55,7 +55,7 @@
         display: flex;
         align-items: center;
         height: 100%;
-        width: 15rem;
+        width: 240px;
     }
 
     div {
@@ -70,7 +70,7 @@
         font-size: 4rem;
         margin: 0;
         font-weight: bold;
-        line-height: 4.5rem;
+        line-height: 1em;
     }
     
     p {
