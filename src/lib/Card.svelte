@@ -38,15 +38,17 @@
     }
 
     div.flex {
-        overflow: auto;
+        overflow: overlay;
         display: flex;
         align-items: center;
         flex-direction: column;
         height: calc( 100% - 3rem );
         gap : 1em;
         border-radius: 1rem;
-    }
 
+        scrollbar-gutter: stable;
+    scrollbar-gutter: stable both-edges;
+    }
 
     .meteo > div.flex{
         overflow: unset;

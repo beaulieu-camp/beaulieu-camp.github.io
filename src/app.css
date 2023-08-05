@@ -27,8 +27,8 @@ body {
     background-color: var(--primary);
     color: var(--text);
     font-family: 'Poppins', sans-serif;
+    overflow: overlay;
 }
-
 
 .search{
     overflow: hidden;
@@ -93,6 +93,19 @@ body {
     margin:0;
 }
 
-table {
-    width:100%;
+@media ( orientation: landscape ){
+
+    ::-webkit-scrollbar{
+        width:0.2rem;
+        height:0.2rem;
+
+
+    }
+
+    ::-webkit-scrollbar-thumb{
+        border-radius:1rem;
+        background-clip:content-box;
+        background-color: var(--text);
+    }
+
 }
