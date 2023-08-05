@@ -13,6 +13,7 @@
 <Card title="Icones" taille="">
     <p>css.gg</p>
     <p>fontawesome</p>
+    <p>simple icons</p>
 </Card>
 <Card title="Développeurs" taille="">
     <p>AquaBx</p>
