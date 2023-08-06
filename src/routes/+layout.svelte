@@ -34,7 +34,6 @@
 	header {
 		text-align: center;
 		font-size: 2.25rem;
-		/* letter-spacing: 0.04em; */
 		font-weight: bold;
 		margin: 16px 0 ;
 	}
