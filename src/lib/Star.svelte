@@ -1,11 +1,12 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import Card from "./Card.svelte";
+    import SubCard from "./SubCard.svelte";
 
     let data =  []
 
     onMount(async() => {
-        const response = await fetch('api/star')
+        const response = await fetch('https://beaulieu-camp.github.io/star/index.json')
         data = await response.json()
     })
 
@@ -15,22 +16,18 @@
     }
 </script>
 
-<Card title="Réseau Star" taille="semilarge">
+<Card title="Réseau Star" taille="square">
 
-    <table>
-        {#each Object.values(data) as item}
-            <tr>
-                <td colspan="3">{item.nom}</td>
-            </tr>
+    {#each Object.values(data) as item}
+        <SubCard title={item.nom} color="">
             {#each item.dessertes as bus}
-                <tr>
+                <table>
                     <td>{bus[1]}</td>
                     <td>{date_parse(bus[2])}</td>
-
                     <td>{bus[3]}</td>
-                </tr>
+                </table>
             {/each}
-        {/each}
-    </table>
+        </SubCard>
+    {/each}
 
 </Card>

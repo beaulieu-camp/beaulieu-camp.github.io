@@ -8,8 +8,8 @@
 </script>
 
 <Weather></Weather>
-<Salles></Salles>
 <Map></Map>
-<!-- <Star></Star> -->
+<Salles></Salles>
 <Resto></Resto>
 <Biblio></Biblio>
+<Star></Star>

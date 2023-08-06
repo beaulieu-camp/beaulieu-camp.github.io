@@ -34,15 +34,14 @@
 	header {
 		text-align: center;
 		font-size: 2.25rem;
-		letter-spacing: 0.1em;
 		font-weight: bold;
 		margin: 16px 0 ;
 	}
 
 	.portfolio {
-		column-width: 320px;
+		column-width: 350px;
 		column-gap: 16px;
-		max-width: 1120px;
+		max-width: 1178px;
 		margin: auto ;
 		min-height: calc( 100vh - 184px );
 	}
