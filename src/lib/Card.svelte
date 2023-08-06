@@ -57,7 +57,7 @@
         aspect-ratio: 1/1;
     }
     .large{
-        aspect-ratio: 1/2;
+        aspect-ratio: 2/3;
     }
     .demi{
         aspect-ratio: 2/1;
