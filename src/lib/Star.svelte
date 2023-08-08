@@ -59,7 +59,6 @@
     }
 </script>
 <Card title="Réseau Star" taille="square">
-
     {#each Object.values(data) as arret}
         <header>Arrêt {arret.nom}</header>
         {#each Object.values(arret.dessertes) as ligne}
