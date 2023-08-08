@@ -64,6 +64,7 @@
         flex-direction: column;
         letter-spacing: 0.3rem;
         text-align: right;
+        overflow: auto;
     }
 
     h1 {
