@@ -18,7 +18,7 @@
 
         let date = new Date(time*1000)
         
-        return `jusqu'au ${date.getDate()}/${date.getMonth()+1} à ${date.getHours()}:${date.getMinutes()}`
+        return `jusqu'au ${date.toLocaleString('fr')}`
     }
 
     onMount( async() => {

@@ -1,12 +1,16 @@
 <script lang="ts">
     import 'mapbox-gl/dist/mapbox-gl.css';
     import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+    import {bus_fetch} from '../includes/bus.ts'
 
     import { onMount } from 'svelte';
     mapboxgl.accessToken = '123';
     
     import Card from '$lib/Card.svelte';
     
+
+    let buses = []
+    setInterval( async() => buses = await bus_fetch() , 60000 )
     
     function changelayer(event,map){
         if (event.matches){
@@ -36,7 +40,7 @@
     }
     
     onMount(async() => {
-    
+        buses = await bus_fetch()
         let geojson = await import('../includes/geojson.json')
         let def = await import('../includes/search.ts')
     
@@ -122,11 +126,6 @@
         [[48.12063475718436, -1.6340607499578876],'biblio'] // biblio insa
     
         ]
-    
-        // const response = await fetch('api/star')
-        // let data = await response.json()
-        
-        // markers = [...markers,...data]
 
         for (const marker of markers ) {
             // create a HTML element for each feature
@@ -147,6 +146,18 @@
             // 
             // make a marker for each feature and add to the map
             let m = new mapboxgl.Marker(el).setLngLat(marker[0].reverse()).addTo(map);
+        }
+
+        for (let bus of buses ) {
+            // create a HTML element for each feature
+            const el = document.createElement('div');
+            el.className = 'marker';
+            el.style.height = '30px';
+            el.style.width = '30px';
+    
+            el.innerHTML = `<svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="500" cy="500" r="500" fill="white"/><path d="M500 244C634.4 244 724 279.2 724 324V340V372C741.7 372 756 386.3 756 404V468C756 485.7 741.7 500 724 500V660C724 677.7 709.7 692 692 692V724C692 741.7 677.7 756 660 756H628C610.3 756 596 741.7 596 724V692H404V724C404 741.7 389.7 756 372 756H340C322.3 756 308 741.7 308 724V692C290.3 692 276 677.7 276 660V500C258.3 500 244 485.7 244 468V404C244 386.3 258.3 372 276 372V340V324C276 279.2 365.6 244 500 244ZM340 404V500C340 517.7 354.3 532 372 532H484V372H372C354.3 372 340 386.3 340 404ZM516 532H628C645.7 532 660 517.7 660 500V404C660 386.3 645.7 372 628 372H516V532ZM356 644C364.487 644 372.626 640.629 378.627 634.627C384.629 628.626 388 620.487 388 612C388 603.513 384.629 595.374 378.627 589.373C372.626 583.371 364.487 580 356 580C347.513 580 339.374 583.371 333.373 589.373C327.371 595.374 324 603.513 324 612C324 620.487 327.371 628.626 333.373 634.627C339.374 640.629 347.513 644 356 644ZM644 644C652.487 644 660.626 640.629 666.627 634.627C672.629 628.626 676 620.487 676 612C676 603.513 672.629 595.374 666.627 589.373C660.626 583.371 652.487 580 644 580C635.513 580 627.374 583.371 621.373 589.373C615.371 595.374 612 603.513 612 612C612 620.487 615.371 628.626 621.373 634.627C627.374 640.629 635.513 644 644 644ZM596 324C596 315.2 588.8 308 580 308H420C411.2 308 404 315.2 404 324C404 332.8 411.2 340 420 340H580C588.8 340 596 332.8 596 324Z" fill="black"/></svg>`
+
+            let m = new mapboxgl.Marker(el).setLngLat(bus.coordonnees.reverse()).addTo(map);
         }
     })
     </script>
