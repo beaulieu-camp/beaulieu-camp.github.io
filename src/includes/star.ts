@@ -5,14 +5,14 @@ url += "&geofilter.polygon=(48.1115718311405,-1.647477149963379),(48.11274662400
 let url2 = "https://beaulieu-camp.github.io/star/index.json"
 
 export type star_ret = {
-    [idligne : string] : {
-        nom:string,
-        sens : {
-            [sens:string] : {
-                direction:string,
-                dessertes: {
-                    [idarret:string] : {
-                        nom : string,
+    [idarret:string] : {
+        nom : string,
+        dessertes: {
+            [idligne : string] : {
+                nom:string,
+                sens : {
+                    [sens:string] : {
+                        direction:string,
                         horaires : number[],
                         prochainshoraires : number[]
                     }
@@ -38,7 +38,7 @@ type star_in = {
         }[]
 }
 
-export async function star_fetch() : Promise<star_ret>{
+export async function star_fetch(){
     let req1 = await fetch(url2)
     if (req1.status != 200) {
         throw ("Api Star Pété") 
@@ -61,12 +61,12 @@ export async function star_fetch() : Promise<star_ret>{
         let horaire = (new Date(item.fields.depart)).getTime()/1000
         let direction = item.fields.destination
 
-        if ( !obj_ret[idligne] ) obj_ret[idligne] = {nom:nomligne,sens:{}}
-        if ( !obj_ret[idligne].sens[sens] ) obj_ret[idligne].sens[sens] = {direction:direction,dessertes:{}}
-        if ( !obj_ret[idligne].sens[sens].dessertes[idarret] ) obj_ret[idligne].sens[sens].dessertes[idarret] = {nom:nomarret,horaires:[],prochainshoraires:[]}
-        if ( !obj_ret[idligne].sens[sens].dessertes[idarret].prochainshoraires ) obj_ret[idligne].sens[sens].dessertes[idarret].prochainshoraires = []
+        if ( !obj_ret[idarret] ) obj_ret[idarret] = {nom:nomarret,dessertes:{}}
+        if ( !obj_ret[idarret].dessertes[idligne] ) obj_ret[idarret].dessertes[idligne] = {nom:nomligne,sens:{}}
+        if ( !obj_ret[idarret].dessertes[idligne].sens[sens] ) obj_ret[idarret].dessertes[idligne].sens[sens] = {direction:direction,horaires:[],prochainshoraires:[]}
+        if ( !obj_ret[idarret].dessertes[idligne].sens[sens].prochainshoraires ) obj_ret[idarret].dessertes[idligne].sens[sens].prochainshoraires = []
 
-        obj_ret[idligne].sens[sens].dessertes[idarret].prochainshoraires.push(horaire)
+        obj_ret[idarret].dessertes[idligne].sens[sens].prochainshoraires.push(horaire)
     }
-    return obj_ret
+    return Object.values(obj_ret).sort((a,b) => { return a.nom.localeCompare(b.nom) })
 }
