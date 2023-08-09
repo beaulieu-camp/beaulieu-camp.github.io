@@ -2,12 +2,20 @@
 
     export let title:String
     export let taille:String
+    export let params_callback: Function|undefined
+
+    import Icons from "$lib/Icons.svelte"
 
 </script>
 
 
 
 <div class="card {taille}">
+    {#if params_callback != undefined} 
+    <!-- params_callback -->
+        <button on:click={ params_callback() }><Icons name="settings"></Icons></button>
+        
+    {/if}
     <header>{title}</header>
     <div class="flex">
         <slot></slot>
@@ -17,6 +25,12 @@
 
 
 <style>
+    button {
+        all:unset;
+        position: absolute;
+        top:18px;
+        right: 18px;
+    }
 
     .card > header {
         text-align: center;
@@ -25,6 +39,7 @@
     }
 
     .card {
+        position: relative;
         user-select: none;
         break-inside: avoid;
         background-color: var(--secondary);
