@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Dialog from "$lib/Dialog.svelte";
+
 	import '../app.css';
 	export let data
 
@@ -26,6 +28,7 @@
 		<slot></slot>
 	</div>
 {/key}
+<Dialog></Dialog>
 
 <Footer/>
 

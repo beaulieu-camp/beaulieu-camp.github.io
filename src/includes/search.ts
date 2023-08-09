@@ -37,7 +37,7 @@ export default class  {
         this._map = map;
         this._container = document.createElement('div');
         this._container.className = 'mapboxgl-ctrl search';
-        this._container.innerHTML = `<div><input/>${svg}</div><div></div>`;
+        this._container.innerHTML = `<div><input class='searchbar'/>${svg}</div><div></div>`;
 
         let input = this._container.children[0]
         let div = this._container.children[1]
