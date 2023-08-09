@@ -1,31 +1,50 @@
 :root {
-	--blue:#5A8DEE;
-	--green:#39DA8A;
-	--red:#F26061;	
-	--orange: #FDAC42;
-	--yellow:#FFCC00;
-	--lightblue:#74E0E5;
-	--purple:#A85ED6;
+    --green:    hsl(150, 70%, 30%);
+    --red:      hsl(360, 85%, 45%);
+    --blue:     hsl(220, 80%, 65%);
+    --orange:   hsl(35, 100%, 65%);
+    --yellow:   hsl(50, 100%, 50%);
+    --lightblue:hsl(180, 70%, 70%);
+    --purple:   hsl(275, 60%, 60%);
 
 	--vh: 100vh;
 
+    --text: hsl(200, 40%, 3%);
+    --background: hsl(200, 40%, 95%);
+    --primary: var(--blue);
+    --accent:  color-mix(in srgb, var(--primary) 70%, var(--text) );
+    --tertiary:  color-mix(in srgb, var(--primary) 40%, var(--background) );
+    --secondary: color-mix(in srgb, var(--tertiary) 40%, var(--background) );
 
-    --primary:rgb(229, 239, 255);
-    --secondary:rgba(255, 255, 255, 0.5);
-    --text:#000000;
+
+    --shadow: 0px 10px 15px -3px rgba(0,0,0,0.3) ;
+
 }
 
 @media (prefers-color-scheme: dark){
     :root	{
-        --primary:rgb(16, 26, 63);
-        --secondary:rgba(0, 0, 0, 0.5);
-        --text:white;
+
+        --green:    hsl(150, 70%, 50%);
+        --blue:     hsl(220, 80%, 65%);
+        --red:      hsl(360, 85%, 65%);
+        --orange:   hsl(35, 100%, 65%);
+        --yellow:   hsl(50, 100%, 50%);
+        --lightblue:hsl(180, 70%, 70%);
+        --purple:   hsl(275, 60%, 60%);
+
+        --text: hsl(200, 40%, 95%);
+        --background: hsl(200, 40%, 3%);
+        --primary: var(--blue);
+        --accent:  color-mix(in srgb, var(--primary) 90%, white );
+        --tertiary:  color-mix(in srgb, var(--primary) 20%, var(--background) );
+        --secondary: color-mix(in srgb, var(--tertiary) 20%, var(--background) );
+
 	}
 }
 
 html {
     font-family: 'Poppins', sans-serif ;
-    background-color: var(--primary);
+    background-color: var(--background);
     color: var(--text);
     font-size: 16px;
 }
@@ -53,14 +72,12 @@ a:visited,a[href] {
 }
 
 .search{
-    /* overflow: hidden; */
     font-size: 1rem;
     color: var(--text);
     text-align: left;
     width: clamp(1px,100%,640px);
-    background-color: var(--primary);
+    background-color: var(--tertiary);
     border-radius: 16px;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
 }
 
 .search > div:nth-child(1){
@@ -68,21 +85,20 @@ a:visited,a[href] {
 
     font-size: 1rem;
     width: calc( 100% - 32px );
-    padding: 0 16px;
+    padding: 0 8px;
     align-items: center;
 }
 
-.search input {
+input.searchbar  {
     all:unset;
     flex:1;
-    padding: 8px 0;
+    padding: 10px 5px;
     width: inherit;
     font-size: 16px;
     height: 20px;
 }
 
-
-.search input ~ svg {
+input.searchbar ~ svg {
     color: var(--text);
 }
 
@@ -104,7 +120,7 @@ a:visited,a[href] {
 }
 
 .search > div:nth-child(2) > a:hover{
-    background-color: var(--secondary);    
+    background-color: rgba(0,0,0,0.3);    
 }
 
 .mapboxgl-ctrl-top-left {
@@ -115,6 +131,16 @@ a:visited,a[href] {
 
 .mapboxgl-ctrl-top-left > .mapboxgl-ctrl.search{
     margin:0;
+}
+
+button {
+    background-color: var(--primary);
+    border: unset;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color : var(--text);
+    font-family: 'Poppins';
 }
 
 @media ( orientation: landscape ){
