@@ -28,4 +28,9 @@ export class configuration {
         window.sessionStorage.setItem("configuration", JSON.stringify(this.config) )
     }
 
+    import(newconfig:config){
+        this.config=newconfig
+        this.save()
+    }
+
 }

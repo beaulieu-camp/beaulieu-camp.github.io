@@ -5,7 +5,6 @@
   import Resto from "$lib/Resto.svelte";
   import Star from "$lib/Star.svelte";
   import Biblio from "$lib/Biblio.svelte";
-  import Dialog from "$lib/Dialog.svelte";
 </script>
 
 <Weather></Weather>
@@ -14,4 +13,3 @@
 <Resto></Resto>
 <Biblio></Biblio>
 <Star></Star>
-<Dialog></Dialog>

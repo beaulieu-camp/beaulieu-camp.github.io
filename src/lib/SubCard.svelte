@@ -13,7 +13,7 @@ export let color : string
 <style>
 
     .subcard {
-        background-color: var(--secondary);
+        background-color: var(--tertiary);
         backdrop-filter: blur(4);
         padding: 16px ;
         border-radius: 16px;

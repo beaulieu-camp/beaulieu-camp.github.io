@@ -32,6 +32,6 @@ export class dialog {
         this.values.set(values)
         this.callback = callback
         
-        this.element.show()
+        this.element.showModal()
     }
 }

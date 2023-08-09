@@ -7,6 +7,7 @@
 	<a target="_blank" href="https://discord.gg/xbTnysGgZN"><Icons name="discord"/>Discord</a>
 	<a target="_blank" href="https://github.com/beaulieu-camp"><Icons name="github"/>Github</a>
 	<a href="/infos"><Icons name="info"/>Infos</a>
+	<a href="/settings"><Icons name="settings"/>Settings</a>
 
 </footer>
 
