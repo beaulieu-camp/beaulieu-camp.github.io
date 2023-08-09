@@ -17,12 +17,15 @@ export class dialog {
     close(){
         this.element.close()
         let liste:string[] = []
-        
-        for (let input of this.element.querySelectorAll("input") ){
-            if (input.checked) liste.push( input.getAttribute("name")! ) 
-        }
+
+        this.values.subscribe((val) => {
+            for (let input of val ){
+                if (input.checked) liste.push( input.id ) 
+            }
+        })
         
         this.callback(liste)
+
     }
 
     open(values:values,callback:Function){

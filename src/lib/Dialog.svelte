@@ -6,6 +6,7 @@
     let container:dialog
     let el:HTMLDialogElement
     let values:values = []
+    let filter = ""
 
     onMount(()=>{
         container = new dialog(el)
@@ -16,16 +17,24 @@
                         
     })
 
+    function checked(e,value) {
+        value.checked = e.target.checked
+    }
+
 </script>
 
 <dialog bind:this={el}>
     <form>
-        {#each values as value}
-            <label for={value.id}>{value.name}</label><input id={value.id} name={value.id} checked={value.checked} type="checkbox">
-            <br>
-        {/each}
+        <input bind:value={filter}>
+        <div>
+            {#each values as value}
+                {#if value.name.includes(filter)}
+                    <label for={value.id}>{value.name}</label><input on:change={(e) => checked(e,value)} id={value.id} name={value.id} checked={value.checked} type="checkbox"><br>
+                {/if}
+            {/each}
+        </div>
+        <button on:click={ () => container.close() }>Save</button>
     </form>
-    <button on:click={ () => container.close() }>Save</button>
 </dialog>
 
 
@@ -33,7 +42,18 @@
     dialog {
         position: fixed;
         top:10%;
-        max-height: 70vh ;
+        height: 70vh ;
+        width:clamp(0px,100%,300px)
         /* transform: translateY(-50%); */
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap:16px;
+        height: 100%;
+    }
+    div {
+        height: 100%;
+        overflow: auto;
     }
 </style>

@@ -98,7 +98,7 @@
             center: [-1.638,48.119], // starting position [lng, lat]
             zoom:15,
             maxZoom: 18,
-            minZoom: 14            
+            // minZoom: 14            
         });
     
         map.addControl(new mapboxgl.FullscreenControl(),'bottom-right');

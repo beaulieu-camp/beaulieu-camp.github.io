@@ -3,7 +3,7 @@ type config = {
 }
 
 export class configuration {
-    config:config = {"salles":[]}
+    config:config = {}
 
     constructor(){
         let config_stored = window.sessionStorage.getItem("configuration")
@@ -15,7 +15,8 @@ export class configuration {
     }
 
     get(attribute:string) {
-        return this.config[attribute]
+        if (this.config[attribute]) return this.config[attribute]
+        else return []
     }
 
     set(attribute:string, value:any){

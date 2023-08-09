@@ -2,19 +2,26 @@
     import { onMount } from "svelte";
     import Card from "./Card.svelte";
     import SubCard from "./SubCard.svelte";
-    import {star_fetch} from "../includes/star"
-    import type {star_ret} from "../includes/star"
+    import {star_fetch,get_arrets} from "../includes/star"
+    import type {arret_obj} from "../includes/star"
+    import {dialog,created} from "../includes/dialog"
+    import {configuration} from "../includes/store"
 
-    let data:star_ret = {}
+    let data:{[key:string]:arret_obj} = {} 
     let actualtime = Math.floor((new Date()).getTime()/1000)
+    let config:configuration
 
-    setInterval(async()=>{
-        data = await star_fetch()
-        actualtime+=60
-    }, 60000)
+
+    async function update_arrets(){
+        data  = {}
+        for (let key of config.get("arrets")){
+            data[key] = await star_fetch( key )
+        }
+    }
 
     onMount(async() => {
-        data = await star_fetch()
+        config = new configuration()
+        await update_arrets()
     })
 
     function time_beautify(time:number){
@@ -38,7 +45,7 @@
         let obj_ret = []
 
         for ( let item of filtered ) {
-            if (item >= now) {
+            if (item >= now ) {
                 obj_ret.push({time:item,type:"Théorique"})
             }
         }
@@ -57,8 +64,31 @@
 
         return obj_ret.sort( (a,b) => {return a.time - b.time} )
     }
+
+    async function dialog_call(){
+        let allsalles:{id:string,name:string,checked:boolean}[] = []
+        let arr = await get_arrets()
+        for (let code in arr ){
+            allsalles.push({
+                name:arr[code],
+                id:code,
+                checked : config.get("arrets").includes(code)
+            })
+        }
+
+        let callback =  async (liste:string[]) => {
+                            config.set("arrets",liste);
+                            await update_arrets();
+                        }
+
+        created.subscribe((value) => {
+            value.open(allsalles,callback)
+        })
+
+    }
 </script>
-<Card title="Réseau Star" taille="square">
+
+<Card title="Réseau Star" taille="square" params_callback={dialog_call }>
     {#each Object.values(data) as arret}
         <header>Arrêt {arret.nom}</header>
         {#each Object.values(arret.dessertes) as ligne}
