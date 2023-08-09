@@ -11,6 +11,14 @@ export class dialog {
     
     constructor(el:HTMLDialogElement){
         this.element = el
+        
+        el.addEventListener("click",  (e) => {
+            if (e.target === el) {
+                el.close();
+            }
+        })
+
+
         created.set(this)
     }
     
