@@ -22,6 +22,7 @@
     onMount(async() => {
         config = new configuration()
         await update_arrets()
+
     })
 
     function time_beautify(time:number){

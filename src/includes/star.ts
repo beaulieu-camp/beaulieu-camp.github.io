@@ -1,3 +1,4 @@
+
 export type arret_obj = {
     nom : string,
     dessertes: {
@@ -8,6 +9,7 @@ export type arret_obj = {
                     direction:string,
                     horaires : number[],
                     prochainshoraires : number[]
+
                 }
             }
         }
@@ -44,9 +46,11 @@ export async function star_fetch( idarret:string ){
     let url2 = `https://data.explore.star.fr/api/records/1.0/search/?dataset=tco-bus-circulation-passages-tr&refine.idarret=${idarret}&refine.precision=Temps%20r%C3%A9el`
 
     let req1 = await fetch(url1)
+
     if (req1.status != 200) {
         throw ("Api Star Pété") 
     }
+
 
     let req2 = await fetch(url2)
     if (req2.status != 200) {
