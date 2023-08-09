@@ -2,8 +2,7 @@
     import { onMount } from "svelte";
     import { dialog } from "../includes/dialog";
     import type {values} from "../includes/dialog";
-  import search from "../includes/search";
-  import Icons from "./Icons.svelte";
+    import Icons from "./Icons.svelte";
 
     let container:dialog
     let el:HTMLDialogElement
@@ -14,13 +13,14 @@
         container = new dialog(el)
         
         container.values.subscribe((value) => {
+            filter = ""
             values = value
         })
                         
     })
 
-    function checked(e,value) {
-        value.checked = e.target.checked
+    function checked(e:InputEvent,value) {
+        value.checked = e.target!.checked
     }
 
 </script>
@@ -42,7 +42,10 @@
                 {/if}
             {/each}
         </div>
-        <button on:click={ () => container.close() }>Save</button>
+        <div class="buttons">
+            <button on:click={ () => container.close() }>Save</button>
+            <button on:click={ () => el.close() }>Close</button>
+        </div>
     </div>
 </dialog>
 
@@ -71,6 +74,15 @@
 
     dialog::backdrop {
         background-color: rgba(0, 0, 0, .5);
+    }
+
+    .buttons {
+        gap:16px;
+        display: flex;
+    }
+
+    button{
+        flex:1;
     }
 
 
