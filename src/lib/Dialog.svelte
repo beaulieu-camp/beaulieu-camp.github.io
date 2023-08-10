@@ -57,15 +57,16 @@
         border-radius: 16px;
         background:var(--secondary);
         color:var(--text);
-        padding:16px;
         border: 2px solid var(--primary);
         box-shadow: var(--shadow);
+        padding:0;
     }
     .form {
         display: flex;
         flex-direction: column;
         gap:16px;
-        height: 100%;
+        height: calc(100% - 32px);
+        padding:16px;
     }
     .container {
         height: 100%;
