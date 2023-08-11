@@ -32,7 +32,7 @@
     
   }
   
-  @media (max-width:360px){
+  @media (max-width:450px){
     footer{
     	width:calc(100% - 16px);
     }
