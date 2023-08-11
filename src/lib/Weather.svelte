@@ -2,9 +2,8 @@
     import BlockCard from "./BlockCard.svelte"
     import { onMount } from "svelte";
 
-    let icon = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
     let desc = ""
-    let code = ""
+    let code = "base"
     let temperature = ""
 
     onMount(async()=>{
