@@ -4,9 +4,7 @@
 
     import { onMount } from 'svelte';
     mapboxgl.accessToken = '123';
-    
-    import BlockCard from './BlockCard.svelte';
-  import SubCard from './SubCard.svelte';
+
     
     function changelayer(event,map){
         if (event.matches){
@@ -36,8 +34,8 @@
     }
     
     onMount(async() => {
-        let geojson = await import('../includes/geojson.json')
-        let def = await import('../includes/search.ts')
+        let geojson = await import('$lib/../includes/geojson.json')
+        let def = await import('$lib/../includes/search.ts')
     
         const map = new mapboxgl.Map({
             container: 'map',
@@ -145,17 +143,18 @@
     })
     </script>
     
-    <BlockCard title="Carte Beaulieu" id="beaulieumap">
         <div id="map"></div>
-    </BlockCard>
+
     
     
     <style>
     
         #map { 
-            width: 100%;
-            height: calc(100svh - 191px) ;
-            border-radius: 16px;
+           width: calc( 100% - 16px ); 
+          	height:100%;
+          	border-radius: 16px;
+          	position: absolute;
+          	margin : 0 8px;
         }
     
     

@@ -74,7 +74,7 @@
 
 
 <GridCard title="Informations">
-    <Form></Form>
+    <!--<Form></Form>-->
     <SubCard title="Réseaux">
         <a class="iconbtn" target="_blank" href="https://discord.gg/xbTnysGgZN"><Icons width="32" name="discord"/></a>
         <a class="iconbtn" target="_blank" href="https://github.com/beaulieu-camp"><Icons width="32" name="github"/></a>
@@ -82,6 +82,7 @@
     <SubCard title="Librairies">
         <p>sveltekit</p>
         <p>mapbox</p>
+      	<p>hammerjs</p>
         <p>openstreetmap</p>
         <p>cartocdn</p>
     </SubCard>
