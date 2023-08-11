@@ -46,7 +46,8 @@ html {
     font-family: 'Poppins', sans-serif ;
     background-color: var(--background);
     color: var(--text);
-    font-size: 16px;
+    font-size: 16;
+    scroll-behavior: smooth;
 }
 
 .mapboxgl-map {
@@ -54,7 +55,7 @@ html {
 }
 
 body {
-    margin : 0 16px;
+    margin : 0;
 }
 
 a[href] {
@@ -62,13 +63,25 @@ a[href] {
     transition: 0.3s;
 }
 
-a[href]:hover {
-    opacity: 0.5;
+a[href]:hover , button:hover, a[href]:focus, button:focus{
+    outline: unset;
+    border: unset;
+    background-color: rgba(0,0,0,0.3);
 }
 
 a:visited,a[href] {
     color:unset;
     text-decoration: unset;
+}
+
+button {
+    background-color: var(--primary);
+    border: unset;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color : var(--text);
+    font-family: 'Poppins';
 }
 
 .search{
@@ -78,6 +91,7 @@ a:visited,a[href] {
     width: clamp(1px,100%,640px);
     background-color: var(--tertiary);
     border-radius: 16px;
+    overflow: hidden;
 }
 
 .search > div:nth-child(1){
@@ -104,7 +118,6 @@ input.searchbar ~ svg {
 
 .search > div:nth-child(2){
 
-    overflow: hidden;
     display: none;
 }
 
@@ -112,15 +125,19 @@ input.searchbar ~ svg {
     display: block;
 }
 
-.search > div:nth-child(2) > a{
+.search > div:nth-child(2) > button{
+    background-color: unset;
+    width: 100%;
     padding: 8px 16px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    display:block;
+    text-align: left;
+    border-radius: unset;
 }
-
-.search > div:nth-child(2) > a:hover{
-    background-color: rgba(0,0,0,0.3);    
+.search > div:nth-child(2) > button:focus {
+    background-color: rgba(0,0,0,0.3);
 }
 
 .mapboxgl-ctrl-top-left {
@@ -133,16 +150,8 @@ input.searchbar ~ svg {
     margin:0;
 }
 
-button {
-    background-color: var(--primary);
-    border: unset;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color : var(--text);
-    font-family: 'Poppins';
-}
 
+/* 
 @media ( orientation: landscape ){
 
     ::-webkit-scrollbar{
@@ -158,8 +167,8 @@ button {
         background-color: var(--text);
     }
 
-}
+} */
 
 body > div {
-    overflow-y: auto;
+    overflow: hidden;
 }

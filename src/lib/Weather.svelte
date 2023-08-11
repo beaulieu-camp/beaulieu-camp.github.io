@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Card from "./Card.svelte"
+    import BlockCard from "./BlockCard.svelte"
     import { onMount } from "svelte";
 
     let icon = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -15,38 +15,41 @@
     })
 
     $: switch (code) {
-        case '01d' : icon = '/weather/01d.svg'; desc= "Dégagé"   ;break;
-        case '01n' : icon = '/weather/01n.svg'; desc= "Dégagé"   ;break;
-        case '02d' : icon = '/weather/02d.svg'; desc= "Epars"    ;break;
-        case '02n' : icon = '/weather/02n.svg'; desc= "Epars"    ;break;
-        case '03d' : icon = '/weather/03d.svg'; desc= "Nuageux"  ;break;
-        case '03n' : icon = '/weather/03n.svg'; desc= "Nuageux"  ;break;
-        case '04d' : icon = '/weather/04.svg' ; desc= "Couvert"  ;break;
-        case '04n' : icon = '/weather/04.svg' ; desc= "Couvert"  ;break;
-        case '09d' : icon = '/weather/09.svg' ; desc= "Pluvieux" ;break;
-        case '09n' : icon = '/weather/09.svg' ; desc= "Pluvieux" ;break;
-        case '10d' : icon = '/weather/10d.svg'; desc= "Pluvieux" ;break;
-        case '10n' : icon = '/weather/10n.svg'; desc= "Pluvieux" ;break;
-        case '11d' : icon = '/weather/11.svg' ; desc= "Orage"    ;break;
-        case '11n' : icon = '/weather/11.svg' ; desc= "Orage"    ;break;
-        case '13d' : icon = '/weather/.svg'   ; desc= ""         ;break;
-        case '13n' : icon = '/weather/.svg'   ; desc= ""         ;break;
-        case '50d' : icon = '/weather/.svg'   ; desc= ""         ;break;
-        case '50n' : icon = '/weather/.svg'   ; desc= ""         ;break;
+        case '01d' : desc= "Dégagé"   ; break;
+        case '01n' : desc= "Dégagé"   ; break;
+        case '02d' : desc= "Epars"    ; break;
+        case '02n' : desc= "Epars"    ; break;
+        case '03d' : desc= "Nuageux"  ; break;
+        case '03n' : desc= "Nuageux"  ; break;
+        case '04d' : desc= "Couvert"  ; break;
+        case '04n' : desc= "Couvert"  ; break;
+        case '09d' : desc= "Pluvieux" ; break;
+        case '09n' : desc= "Pluvieux" ; break;
+        case '10d' : desc= "Pluvieux" ; break;
+        case '10n' : desc= "Pluvieux" ; break;
+        case '11d' : desc= "Orage"    ; break;
+        case '11n' : desc= "Orage"    ; break;
+        case '13d' : desc= ""         ; break;
+        case '13n' : desc= ""         ; break;
+        case '50d' : desc= ""         ; break;
+        case '50n' : desc= ""         ; break;
     }
 
 </script>
 
-<Card title="Méteo Beaulieu" taille="meteo demi">
+<BlockCard title="Méteo Beaulieu">
     <span>
-        <img draggable="false" src={icon} alt="icon"/>
+        <img draggable="false" src="/weather/{code}.svg" alt="icon"/>
+        <!-- <h1 class="img">
+            {emot} 
+        </h1> -->
         <div>
             <h1> {temperature}° </h1>
             <p> {desc} </p>
         </div>
     </span>
 
-</Card>
+</BlockCard>
 
 
 
@@ -64,7 +67,6 @@
         flex-direction: column;
         letter-spacing: 0.3rem;
         text-align: right;
-        overflow: auto;
     }
 
     h1 {
@@ -81,8 +83,9 @@
     
     img {
         aspect-ratio: 1/1;
-        height: 100px;
-        transform: scale(2.5);
+        height: 100%;
+        /* font-size: 6rem; */
+        /* transform: scale(2.5); */
     }
 
 </style>
