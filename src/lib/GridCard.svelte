@@ -16,7 +16,7 @@
         if (lastt != 0 && !touched){
             let dt = chrono-lastt
             slide.scrollBy({left: -vel*dt})
-            
+            last = slide.scrollLeft
             let signe = Math.sign(vel)
             
             vel = signe * ( Math.sqrt( signe * vel ) - dt/500 )**2
@@ -31,24 +31,25 @@
             lastt = 0
         }
 
-
     }
 
     onMount(async() =>{
         const Hammer = await import("hammerjs")
-        const mc = new Hammer.Manager(slide);
-        var Pan = new Hammer.Pan({ direction: Hammer.DIRECTION_HORIZONTAL });
+        const mc = new Hammer.Manager(slide,{
+            recognizers: [
+                [Hammer.Pan,{ direction: Hammer.DIRECTION_HORIZONTAL }],
+            ]
+        });
 
-        mc.add(Pan);
-        mc.on("panleft panright panend", function(ev) {
-            if (ev.type == "panend") {
+        mc.on("pan", function(ev) {
+            if (ev.isFinal) {
                 last = slide.scrollLeft
-                vel = ev.velocityX
+                vel = ev.overallVelocityX
                 window.requestAnimationFrame(smooth);
             }
-
-            if (!touched) return
-            slide.scrollTo( last - (ev.offsetDirection-3) * ev.distance , 0)
+            else if (touched) {  
+                slide.scrollTo( last - ev.deltaX , 0)
+            }
         });
 
         slide.addEventListener("pointerdown", function (e) {
@@ -59,13 +60,6 @@
             touched = false
         })
         
-        slide.addEventListener("scroll", function (e) {
-            if (!touched) {
-                last = slide.scrollLeft
-            }
-        })
-
-
     })
 
 </script>

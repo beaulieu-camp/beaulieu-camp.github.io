@@ -3,9 +3,9 @@
 </script>
 
 <footer>
-	<a href="/"><Icons width="32" name="home"/></a>
-	<a href="/#plannings"><Icons width="32" name="salle"/></a>
-	<a href="/settings"><Icons width="32" name="settings"/></a>
+	<a class="iconbtn" href="/"><Icons width="32" name="home"/></a>
+	<a class="iconbtn" href="/#plannings"><Icons width="32" name="salle"/></a>
+	<a class="iconbtn" href="/settings"><Icons width="32" name="settings"/></a>
 </footer>
 
 <style>
@@ -25,16 +25,6 @@
 		backdrop-filter: blur(4px);
 		border-radius: 16px;
 		overflow: hidden;
-	}
-
-	a {
-		/* width: 64px; */
-		padding:16px;
-	}
-	
-	a:hover,a:focus{
-		
-		background-color: unset;
 	}
 
 </style>
