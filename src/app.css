@@ -7,14 +7,15 @@
     --lightblue:hsl(180, 70%, 70%);
     --purple:   hsl(275, 60%, 60%);
 
-	--vh: 100vh;
+    --a:70%;
+    --b:40%;
 
+    --primary: var(--blue);
     --text: hsl(200, 40%, 3%);
     --background: hsl(200, 40%, 95%);
-    --primary: var(--blue);
-    --accent:  color-mix(in srgb, var(--primary) 70%, var(--text) );
-    --tertiary:  color-mix(in srgb, var(--primary) 40%, var(--background) );
-    --secondary: color-mix(in srgb, var(--tertiary) 40%, var(--background) );
+    --accent:  color-mix(in srgb, var(--primary) var(--a), var(--text) );
+    --tertiary:  color-mix(in srgb, var(--primary) var(--b), var(--background) );
+    --secondary: color-mix(in srgb, var(--tertiary) var(--b), var(--background) );
 
 
     --shadow: 0px 10px 15px -3px rgba(0,0,0,0.3) ;
@@ -25,19 +26,13 @@
     :root	{
 
         --green:    hsl(150, 70%, 50%);
-        --blue:     hsl(220, 80%, 65%);
         --red:      hsl(360, 85%, 65%);
-        --orange:   hsl(35, 100%, 65%);
-        --yellow:   hsl(50, 100%, 50%);
-        --lightblue:hsl(180, 70%, 70%);
-        --purple:   hsl(275, 60%, 60%);
 
         --text: hsl(200, 40%, 95%);
         --background: hsl(200, 40%, 3%);
-        --primary: var(--blue);
-        --accent:  color-mix(in srgb, var(--primary) 90%, white );
-        --tertiary:  color-mix(in srgb, var(--primary) 20%, var(--background) );
-        --secondary: color-mix(in srgb, var(--tertiary) 20%, var(--background) );
+
+        --a:90%;
+        --b:20%;
 
 	}
 }
@@ -50,29 +45,30 @@ html {
     scroll-behavior: smooth;
 }
 
-.mapboxgl-map {
-    font-family: 'Poppins', sans-serif !important;
-}
-
 body {
     margin : 0;
 }
 
-a[href] {
+.mapboxgl-map {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+a:hover , button:hover, a:focus, button:focus{
+    outline: unset;
+    border: unset;
+}
+
+/* a[href] {
     cursor: pointer;
     transition: 0.3s;
 }
 
-a[href]:hover , button:hover, a[href]:focus, button:focus{
-    outline: unset;
-    border: unset;
-    background-color: rgba(0,0,0,0.3);
-}
+
 
 a:visited,a[href] {
     color:unset;
     text-decoration: unset;
-}
+} */
 
 button {
     background-color: var(--primary);
@@ -84,19 +80,44 @@ button {
     font-family: 'Poppins';
 }
 
+button:hover, button:focus {
+
+    background-color: var(--accent);
+}
+
+
+.iconbtn {
+    padding:16px;
+    background-color: unset;
+    display: inline-block;
+    line-height: 0;
+}
+
+.iconbtn , .iconbtn > svg{
+    transition : 0.2s;
+}
+
+.iconbtn:hover,.iconbtn:focus{
+    background-color: var(--primary);
+}
+
+.iconbtn:hover > svg ,.iconbtn:focus > svg {
+
+    fill : var(--background);
+}
+
+
 .search{
     font-size: 1rem;
     color: var(--text);
     text-align: left;
     width: clamp(1px,100%,640px);
     background-color: var(--tertiary);
-    border-radius: 16px;
-    overflow: hidden;
+    border-radius: 16px;   
 }
 
 .search > div:nth-child(1){
     display: flex;
-
     font-size: 1rem;
     width: calc( 100% - 32px );
     padding: 0 8px;
@@ -110,6 +131,8 @@ input.searchbar  {
     width: inherit;
     font-size: 16px;
     height: 20px;
+
+
 }
 
 input.searchbar ~ svg {
@@ -117,12 +140,14 @@ input.searchbar ~ svg {
 }
 
 .search > div:nth-child(2){
-
     display: none;
+    border-radius: 0 0 16px 16px;   
+    overflow: hidden;
 }
 
 .search:focus-within > div:nth-child(2){
     display: block;
+
 }
 
 .search > div:nth-child(2) > button{
@@ -135,8 +160,10 @@ input.searchbar ~ svg {
     display:block;
     text-align: left;
     border-radius: unset;
+  
 }
-.search > div:nth-child(2) > button:focus {
+.search > div:nth-child(2) > button:focus , .search > div:nth-child(2) > button:hover {
+    outline: unset;
     background-color: rgba(0,0,0,0.3);
 }
 
@@ -148,27 +175,4 @@ input.searchbar ~ svg {
 
 .mapboxgl-ctrl-top-left > .mapboxgl-ctrl.search{
     margin:0;
-}
-
-
-/* 
-@media ( orientation: landscape ){
-
-    ::-webkit-scrollbar{
-        width:4px;
-        height:4px;
-
-
-    }
-
-    ::-webkit-scrollbar-thumb{
-        border-radius:16px;
-        background-clip:content-box;
-        background-color: var(--text);
-    }
-
-} */
-
-body > div {
-    overflow: hidden;
 }

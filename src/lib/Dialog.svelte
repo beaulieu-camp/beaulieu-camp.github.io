@@ -9,6 +9,11 @@
     let values:values = []
     let filter = ""
 
+    function denoise(str:string){
+        let normalized = str.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()
+        return normalized
+    }
+
     onMount(()=>{
         container = new dialog(el)
         
@@ -26,7 +31,7 @@
 </script>
 
 <dialog bind:this={el}>
-    <div class="form">
+    <div tabindex=-1 autofocus class="form">
         <div class="search">
             <div>
                 <input class="searchbar" bind:value={filter}>
@@ -35,7 +40,7 @@
         </div>
         <div class="container">
             {#each values as value}
-                {#if value.name.includes(filter)}
+                {#if denoise(value.name).includes(denoise(filter))}
                     <input on:change={(e) => checked(e,value)} id={value.id} name={value.id} checked={value.checked} type="checkbox">
                     <label for={value.id}>{value.name}</label>
                     <br>
@@ -44,7 +49,7 @@
         </div>
         <div class="buttons">
             <button on:click={ () => container.close() }>Save</button>
-            <button on:click={ () => el.close() }>Close</button>
+            <button  on:click={ () => el.close() }>Close</button>
         </div>
     </div>
 </dialog>

@@ -14,7 +14,7 @@
     <header>
         {title}
         {#if params_callback != undefined} 
-            <button on:click={ params_callback() }><Icons width="20" name="settings"></Icons></button>
+            <button class="iconbtn" on:click={ params_callback() }><Icons width="20" name="settings"></Icons></button>
         {/if}
     </header>
     <slot></slot>
@@ -23,16 +23,7 @@
 
 
 <style>
-    button {
-        all:unset;
-        /* position: absolute; */
-        /* top:18px; */
-        /* right: 18px; */
-        align-items: baseline;
-        padding:0px;
-        padding: 5px 10px;
-        vertical-align: middle;
-    }
+
 
 
     .card > header {

@@ -75,6 +75,10 @@
 
 <GridCard title="Informations">
     <Form></Form>
+    <SubCard title="Réseaux">
+        <a class="iconbtn" target="_blank" href="https://discord.gg/xbTnysGgZN"><Icons width="32" name="discord"/></a>
+        <a class="iconbtn" target="_blank" href="https://github.com/beaulieu-camp"><Icons width="32" name="github"/></a>
+    </SubCard>
     <SubCard title="Librairies">
         <p>sveltekit</p>
         <p>mapbox</p>
@@ -93,6 +97,3 @@
         <p>Non affilié avec l'Université de Rennes</p>
     </SubCard>
 </GridCard>
-
-<a target="_blank" href="https://discord.gg/xbTnysGgZN"><Icons width="32" name="discord"/></a>
-<a target="_blank" href="https://github.com/beaulieu-camp"><Icons width="32" name="github"/></a>
