@@ -8,25 +8,43 @@
     let el:HTMLDialogElement
     let values:values = []
     let filter = ""
+    let modified: boolean
 
     function denoise(str:string){
         let normalized = str.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase()
         return normalized
     }
 
+    function save(){
+        if (modified){
+            container.close()
+        }
+        else{
+            el.close()
+        }
+    }
+
+    function checked(e:InputEvent,value) {
+        modified = true
+        value.checked = e.target!.checked
+    }
+
     onMount(()=>{
         container = new dialog(el)
         
         container.values.subscribe((value) => {
+            modified = false
             filter = ""
             values = value
         })
-                        
-    })
 
-    function checked(e:InputEvent,value) {
-        value.checked = e.target!.checked
-    }
+        el.addEventListener("click",  (e) => {
+            if ( e.target === el) {
+                save()
+            }
+        })       
+   
+    })
 
 </script>
 
@@ -47,10 +65,7 @@
                 {/if}
             {/each}
         </div>
-        <div class="buttons">
-            <button on:click={ () => container.close() }>Save</button>
-            <button  on:click={ () => el.close() }>Close</button>
-        </div>
+        <button on:click={ save }>Fermer</button>
     </div>
 </dialog>
 
