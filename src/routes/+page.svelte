@@ -9,6 +9,9 @@
 
 <Weather></Weather>
 <Map></Map>
+
+<hr id="plannings">
+
 <Salles></Salles>
 <Resto></Resto>
 <Biblio></Biblio>

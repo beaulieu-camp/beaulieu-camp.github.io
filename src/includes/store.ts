@@ -6,7 +6,7 @@ export class configuration {
     config:config = {}
 
     constructor(){
-        let config_stored = window.sessionStorage.getItem("configuration")
+        let config_stored = window.localStorage.getItem("configuration")
         if  ( config_stored ) this.config = JSON.parse(config_stored)
     }
 
@@ -25,7 +25,7 @@ export class configuration {
     }
 
     save() {
-        window.sessionStorage.setItem("configuration", JSON.stringify(this.config) )
+        window.localStorage.setItem("configuration", JSON.stringify(this.config) )
     }
 
     import(newconfig:config){

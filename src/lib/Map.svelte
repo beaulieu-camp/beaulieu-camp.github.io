@@ -5,7 +5,8 @@
     import { onMount } from 'svelte';
     mapboxgl.accessToken = '123';
     
-    import Card from '$lib/Card.svelte';
+    import BlockCard from './BlockCard.svelte';
+  import SubCard from './SubCard.svelte';
     
     function changelayer(event,map){
         if (event.matches){
@@ -144,19 +145,17 @@
     })
     </script>
     
-    <Card title="Carte Beaulieu" taille="large">
+    <BlockCard title="Carte Beaulieu" id="beaulieumap">
         <div id="map"></div>
-    </Card>
+    </BlockCard>
     
     
     <style>
     
         #map { 
-            position: relative; 
-            top: 0; 
-            bottom: 0; 
             width: 100%;
-            height: 100%; 
+            height: 500px; 
+            border-radius: 16px;
         }
     
     

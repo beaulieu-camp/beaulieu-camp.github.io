@@ -1,11 +1,12 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import Card from "./Card.svelte";
+    import GridCard from "./GridCard.svelte";
     import SubCard from "./SubCard.svelte";
     import {star_fetch,get_arrets} from "../includes/star"
     import type {arret_obj} from "../includes/star"
     import {dialog,created} from "../includes/dialog"
     import {configuration} from "../includes/store"
+    import BlockCard from "./BlockCard.svelte";
 
     let data:{[key:string]:arret_obj} = {} 
     let actualtime = Math.floor((new Date()).getTime()/1000)
@@ -89,21 +90,23 @@
     }
 </script>
 
-<Card title="Réseau Star" taille="square" params_callback={dialog_call }>
+<BlockCard title="Réseau Star" id="star" params_callback={dialog_call }>
+    {#if Object.values(data).length == 0}
+        Ajoutes des arrêts à visualiser 😉
+    {/if}
     {#each Object.values(data) as arret}
-        <header>Arrêt {arret.nom}</header>
-        {#each Object.values(arret.dessertes) as ligne}
-            <SubCard title={"Ligne " + ligne.nom} color="">
-                <table>
-                    {#each Object.values(ligne.sens) as sens}
-                        <th>Direction {sens.direction}</th>
-                        {#each event_filter(sens.horaires,sens.prochainshoraires ) as horaire }
-                            <tr>{time_beautify(horaire.time-actualtime)} ({horaire.type})</tr>
-                        {/each}
-                    {/each}
-                </table>
-            </SubCard>
-        {/each}
+        <GridCard title="Arrêt {arret.nom}" >
+            {#each Object.values(arret.dessertes) as ligne}
+                {#each Object.values(ligne.sens) as sens}
+                    <SubCard title="{ligne.nom} ➝ {sens.direction}"  color="">
+                        <table>
+                            {#each event_filter(sens.horaires,sens.prochainshoraires ) as horaire }
+                                <tr>{time_beautify(horaire.time-actualtime)} ({horaire.type})</tr>
+                            {/each}
+                        </table>
+                    </SubCard>
+                {/each}
+            {/each}
+        </GridCard>
     {/each}
-
-</Card>
+</BlockCard>
