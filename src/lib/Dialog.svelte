@@ -30,7 +30,7 @@
         <div class="search">
             <div>
                 <input class="searchbar" bind:value={filter}>
-                <Icons name="search"></Icons>
+                <Icons width="24" name="search"></Icons>
             </div>
         </div>
         <div class="container">
@@ -70,7 +70,7 @@
     }
     .container {
         height: 100%;
-        overflow: auto;
+        overflow: overlay;
     }
 
     dialog::backdrop {

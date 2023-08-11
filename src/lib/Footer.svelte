@@ -3,30 +3,38 @@
 </script>
 
 <footer>
-	<a href="/"><Icons name="home"/>Home</a>
-	<a target="_blank" href="https://discord.gg/xbTnysGgZN"><Icons name="discord"/>Discord</a>
-	<a target="_blank" href="https://github.com/beaulieu-camp"><Icons name="github"/>Github</a>
-	<a href="/infos"><Icons name="info"/>Infos</a>
-	<a href="/settings"><Icons name="settings"/>Settings</a>
-
+	<a href="/"><Icons width="32" name="home"/></a>
+	<a href="/#plannings"><Icons width="32" name="salle"/></a>
+	<a href="/settings"><Icons width="32" name="settings"/></a>
 </footer>
 
 <style>
 	
 	footer {
 		display: flex;
-		width: 100%;
-		gap:16px;
+		/* gap:16px; */
 		justify-content: center;
 		align-items: center;
-		margin: 16px 0;
+		position: fixed;
+		background-color: color-mix( in srgb , var(--background) 40%, transparent );
+		box-shadow: var(--shadow);
+		left:8px;
+		width: fit-content;
+		bottom: 8px;
+		z-index: 50;
+		backdrop-filter: blur(4px);
+		border-radius: 16px;
+		overflow: hidden;
 	}
 
 	a {
-		display: flex;
-		flex-direction: column;align-items: center;
-		gap : 8px;
-		width: 64px;
+		/* width: 64px; */
+		padding:16px;
+	}
+	
+	a:hover,a:focus{
+		
+		background-color: unset;
 	}
 
 </style>

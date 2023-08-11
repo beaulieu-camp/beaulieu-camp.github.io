@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Card from "./Card.svelte"
+    import GridCard from "./GridCard.svelte";
     import SubCard from "./SubCard.svelte"
     import { onMount } from "svelte";
 
@@ -17,7 +17,7 @@
 
 </script>
 
-<Card title="Restorants Universitaire" taille="square">
+<GridCard id="resto" title="Restaurants Universitaire">
 
     {#each data as resto}
         {#if resto["ouverture"][(new Date()).getDay()] = "000"}
@@ -26,4 +26,4 @@
             <SubCard title={resto["nom"]} color="Ouvert"> Ouvert </SubCard>
         {/if}
     {/each}
-</Card>
+</GridCard>

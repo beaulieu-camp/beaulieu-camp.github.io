@@ -19,6 +19,13 @@ export let color : string
         border-radius: 16px;
         width: calc( 100% - 32px );
     }
+    
+    header {
+        font-size: 1.5rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
 
     .red {
         color: var(--red)

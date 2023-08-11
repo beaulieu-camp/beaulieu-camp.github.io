@@ -1,7 +1,6 @@
 <script lang="ts">
 
     export let title:String
-    export let taille:String
     export let params_callback: Function|undefined
 
     import Icons from "$lib/Icons.svelte"
@@ -10,16 +9,15 @@
 
 
 
-<div class="card {taille}">
-    {#if params_callback != undefined} 
-    <!-- params_callback -->
-        <button on:click={ params_callback() }><Icons name="settings"></Icons></button>
-        
-    {/if}
-    <header>{title}</header>
-    <div class="flex">
-        <slot></slot>
-    </div>
+<div class="card">
+    
+    <header>
+        {title}
+        {#if params_callback != undefined} 
+            <button on:click={ params_callback() }><Icons width="20" name="settings"></Icons></button>
+        {/if}
+    </header>
+    <slot></slot>
 </div>
 
 
@@ -27,57 +25,36 @@
 <style>
     button {
         all:unset;
-        position: absolute;
-        top:18px;
-        right: 18px;
+        /* position: absolute; */
+        /* top:18px; */
+        /* right: 18px; */
+        align-items: baseline;
+        padding:0px;
+        padding: 5px 10px;
+        vertical-align: middle;
     }
 
+
     .card > header {
-        text-align: center;
-        padding-bottom:8px;
-        font-size: 1.5rem;
+        text-align: left;
+        padding: 0px 32px;
+        font-size: 2rem;
+        /* display: flex; */
+        line-height: 1.25em;
+        gap:16px;
     }
 
     .card {
         position: relative;
         user-select: none;
-        break-inside: avoid;
-        
-        background: var(--secondary);
-        backdrop-filter: opacity(0.5);
 
-        /* backdrop-filter: blur(4); */
-        padding: 16px;
-        border-radius: 24px;
-        box-shadow: var(--shadow);
-        margin: 0 auto 16px auto;
+        margin: 16px 0;
         transition: height 0.25s ease-in;
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        max-width: 350px;
+        width: calc(100%);
+        
     }
 
-    div.flex {
-        overflow: overlay;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        height: 100%;
-        gap : 16px;
-        border-radius: 16px;
-    }
-
-    .meteo > div.flex{
-        overflow:unset;
-    }
-    .square{
-        aspect-ratio: 1/1;
-    }
-    .large{
-        aspect-ratio: 2/3;
-    }
-    .demi{
-        aspect-ratio: 2/1;
-    }
 </style>

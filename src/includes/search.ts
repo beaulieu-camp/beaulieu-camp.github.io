@@ -5,8 +5,13 @@ function denoise(str:string){
     return normalized
 }
 
+Number.prototype.mod = function(n) {
+    return (( this % n ) + n ) % n;
+  };
+
 export default class  {
     geojson
+    focused=-1
     constructor(geojson){
         this.geojson = geojson
 
@@ -45,6 +50,7 @@ export default class  {
         let ctx = this
 
         input.addEventListener("input",(e) => ctx.search(e,div,map))
+        input.addEventListener("click",(e) => ctx.focused = -1 )
 
         return this._container;
     }
@@ -64,16 +70,32 @@ export default class  {
                 let str2 = denoise( e.target.value )
                 return str1.includes(str2) // est ce que le nom inclus le valeur de l'input
             }
-        )
+        )!
+
+
+        this._container.onkeydown = (e) => { 
+            if (e.key == "ArrowDown" || e.key == "ArrowUp") {
+                let buttons = div.querySelectorAll("button")
+                if ( buttons.length == 0 ) return
+
+                e.preventDefault()
+
+
+                if (e.key == "ArrowUp") this.focused = parseInt(this.focused - 1).mod( buttons.length )
+                else if (e.key == "ArrowDown")    this.focused = parseInt(this.focused + 1).mod( buttons.length )
+                buttons[this.focused].focus()
+
+            }
+        } ;
 
         for ( let layer of filtered.splice(0,5)){
-            let a = document.createElement("a")
-            a.style.display="block"
+            let a = document.createElement("button")
 
             let coords = layer.bounds
 
-            a.addEventListener("pointerdown",(e) => { map.fitBounds( coords ) } ) ;
-            a.tabIndex = "-1"
+            a.addEventListener("click",(e) => { map.fitBounds( coords ); a.blur() } ) ;
+
+            a.tabIndex = 0
             a.innerText = layer.properties["name"]
             div.appendChild(a)
         }

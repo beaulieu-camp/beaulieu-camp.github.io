@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import Card from "./Card.svelte";
+    import GridCard from "./GridCard.svelte";
     import SubCard from "./SubCard.svelte";
     import { salleEvents,salleLibres,getSalles } from "salles_module";
     import { configuration } from "../includes/store";
@@ -14,7 +14,9 @@
     }            
 
     let date = (new Date).getDate()
-    let salles:sallestype = {}
+    let data : sallestype = {}
+    let salles : sallestype = {}
+
 
     function stringify_date(time:number){
         if (time == undefined) return 'updating';
@@ -25,15 +27,16 @@
     }
 
     async function update_salles(){
-        salles = await getSalles()
+        data = {}
         for (let code of config.get("salles")) {
             let date = Math.floor(Date.now()/1000)
-            salles[ code ] = { ...salles[ code ], ...await salleLibres(code,date) }
+            data[ code ] = { ...salles[ code ], ...await salleLibres(code,date) }
         }
     }
-
+    
     onMount( async() => {
         config = new configuration()
+        salles = await getSalles()
         await update_salles()
     })
 
@@ -61,15 +64,15 @@
 
 </script>
 
-<Card title="Salles Ouvertes" taille="square" params_callback={dialog_call}>
-    <!-- {#if salles}
-        Ajoutes des salles a visualisés :)
-    {/if} -->
-    { #each Object.values(salles) as salle }
+<GridCard title="Salles Ouvertes" id="salles" params_callback={dialog_call}>
+    {#if Object.values(data).length == 0}
+        Ajoutes des salles à visualiser 😉
+    {/if}
+    { #each Object.values(data) as salle }
         {#if salle.error}
             <SubCard title={salle.batiment + " " + salle.salle} color="red"> {salle.error} </SubCard>
         {:else if salle.state}
             <SubCard title={salle.batiment + " " + salle.salle} color="green"> {salle.state } {stringify_date(salle.until)} </SubCard>
         {/if}
     { /each }
-</Card>
+</GridCard>

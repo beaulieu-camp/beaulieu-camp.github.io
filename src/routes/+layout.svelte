@@ -19,34 +19,37 @@
 	<title>Beaulieu'Camp - {data.pathname}</title>
 </svelte:head>
 
-<header>
-	<a href="/">Beaulieu'Camp</a>
-</header>
+
+
 
 {#key data.pathname}
-	<div class="portfolio" in:customScale={{ duration: 750}}  >
-		<slot></slot>
-	</div>
+<div class="page" in:customScale={{ duration: 750}}  >
+	<header>
+		Bienvenue 🙂
+	</header>
+	<slot></slot>
+</div>
 {/key}
-<Dialog></Dialog>
 
 <Footer/>
+<Dialog></Dialog>
+
+
 
 <style>
 
 	header {
-		text-align: center;
+		text-align: left;
 		font-size: 2.25rem;
 		font-weight: bold;
-		margin: 16px 0 ;
+		margin-left: 32px;
 	}
-
-	.portfolio {
-		column-width: 350px;
-		column-gap: 16px;
-		max-width: 1178px;
-		margin: auto ;
-		min-height: calc( 100vh - 184px );
+	
+	.page {
+		overflow: hidden overlay;
+		position: relative;
+		padding: 32px 0 128px 0;
+		width: 100%;
 	}
 	
 </style>
