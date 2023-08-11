@@ -12,13 +12,6 @@ export class dialog {
     constructor(el:HTMLDialogElement){
         this.element = el
         
-        el.addEventListener("click",  (e) => {
-            if (e.target === el) {
-                el.close();
-            }
-        })
-
-
         created.set(this)
     }
     
@@ -37,9 +30,8 @@ export class dialog {
     }
 
     open(values:values,callback:Function){
-        this.values.set(values)
         this.callback = callback
-        
+        this.values.set(values)
         this.element.showModal()
     }
 }
