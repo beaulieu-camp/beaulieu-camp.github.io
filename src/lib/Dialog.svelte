@@ -31,7 +31,7 @@
 </script>
 
 <dialog bind:this={el}>
-    <div tabindex=-1 autofocus class="form">
+    <div tabindex="-1" autofocus class="form">
         <div class="search">
             <div>
                 <input class="searchbar" bind:value={filter}>

@@ -19,26 +19,35 @@
 	<title>Beaulieu'Camp - {data.pathname}</title>
 </svelte:head>
 
+<main>
 
+
+	<header>
+		{data.name == "Accueil" ? "Bienvenue 🙂" : data.name}
+	</header>
 
 
 {#key data.pathname}
 <div class="page" in:customScale={{ duration: 750}}  >
-	<header>
-		Bienvenue 🙂
-	</header>
 	<slot></slot>
 </div>
 {/key}
+  
+</main>
 
 <Footer/>
 <Dialog></Dialog>
 
 
-
 <style>
-
-	header {
+  main {
+		display:flex;
+    min-height:calc( 100svh - 96px );
+    flex-direction:column;
+    padding: 16px 0 80px 0;
+		gap:16px;
+  }
+  header {
 		text-align: left;
 		font-size: 2.25rem;
 		font-weight: bold;
@@ -48,8 +57,8 @@
 	.page {
 		overflow: hidden overlay;
 		position: relative;
-		padding: 32px 0 128px 0;
 		width: 100%;
+    flex:1;
 	}
 	
 </style>
