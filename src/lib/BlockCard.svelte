@@ -23,8 +23,6 @@
         overflow: hidden;
         display: block;
         padding: 16px;
-
-
         width: calc( 100% - 32px ) ;
         gap : 16px;
         grid-template-rows: 150px;
