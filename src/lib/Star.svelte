@@ -52,8 +52,6 @@
             }
         }
 
-        // console.log(horairetheo)
-
         obj_ret = obj_ret.slice(0,2)
 
         if (horaireprat){
@@ -70,9 +68,9 @@
     async function dialog_call(){
         let allsalles:{id:string,name:string,checked:boolean}[] = []
         let arr = await get_arrets()
-        for (let code in arr ){
+        for (let code of arr ){
             allsalles.push({
-                name:arr[code],
+                name:code,
                 id:code,
                 checked : config.get("arrets").includes(code)
             })

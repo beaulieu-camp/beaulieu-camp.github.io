@@ -40,10 +40,10 @@ export async function get_arrets(){
     return await req.json()
 }
 
-export async function star_fetch( idarret:string ){
+export async function star_fetch( nomarret:string ){
 
-    let url1 = `https://beaulieu-camp.github.io/star/${idarret}.json`
-    let url2 = `https://data.explore.star.fr/api/records/1.0/search/?dataset=tco-bus-circulation-passages-tr&refine.idarret=${idarret}&refine.precision=Temps%20r%C3%A9el`
+    let url1 = `https://beaulieu-camp.github.io/star/${nomarret}.json`
+    let url2 = `https://data.explore.star.fr/api/records/1.0/search/?dataset=tco-bus-circulation-passages-tr&refine.nomarret=${nomarret}&refine.precision=Temps%20r%C3%A9el`
 
     let req1 = await fetch(url1)
 
