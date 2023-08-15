@@ -83,7 +83,6 @@
         display: grid;
         padding: 16px;
         width: calc( 100% - 32px ) ;
-        min-height: 150px;
         gap : 16px;
         grid-template-rows: 1fr;
         grid-auto-columns: 300px;

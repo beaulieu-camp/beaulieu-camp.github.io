@@ -1,6 +1,7 @@
 <script lang="ts">
     import BlockCard from "./BlockCard.svelte"
     import { onMount } from "svelte";
+  import MainSubCard from "./MainSubCard.svelte";
 
     let desc = ""
     let code = "base"
@@ -37,16 +38,16 @@
 </script>
 
 <BlockCard title="Méteo Beaulieu">
-    <span>
-        <img draggable="false" src="/weather/{code}.svg" alt="icon"/>
-        <!-- <h1 class="img">
-            {emot} 
-        </h1> -->
-        <div>
-            <h1> {temperature}° </h1>
-            <p> {desc} </p>
-        </div>
-    </span>
+    <MainSubCard>
+
+        <span>
+            <img draggable="false" src="/weather/{code}.svg" alt="icon"/>
+            <div>
+                <h1> {temperature}° </h1>
+                <p> {desc} </p>
+            </div>
+        </span>
+    </MainSubCard>
 
 </BlockCard>
 
@@ -57,7 +58,7 @@
         display: flex;
         align-items: center;
         height: 100%;
-        width: 240px;
+
     }
 
     div {

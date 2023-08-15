@@ -75,7 +75,7 @@
         height: 70vh ;
         width:clamp(0px,100%,370px);
         border-radius: 16px;
-        background:var(--secondary);
+        background:var(--background);
         color:var(--text);
         border: 2px solid var(--primary);
         box-shadow: var(--shadow);

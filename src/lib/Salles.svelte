@@ -23,7 +23,7 @@
 
         let date = new Date(time*1000)
         
-        return `jusqu'au ${date.toLocaleString('fr')}`
+        return date.toLocaleString('fr')
     }
 
     async function update_salles(){
@@ -72,7 +72,7 @@
         {#if salle.error}
             <SubCard title={salle.batiment + " " + salle.salle} color="red"> {salle.error} </SubCard>
         {:else if salle.state}
-            <SubCard title={salle.batiment + " " + salle.salle} color="green"> {salle.state } {stringify_date(salle.until)} </SubCard>
+            <SubCard title={salle.batiment + " " + salle.salle} color="green"> {salle.state } jusqu'au <br> {stringify_date(salle.until)} </SubCard>
         {/if}
     { /each }
 </GridCard>
