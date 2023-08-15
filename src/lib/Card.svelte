@@ -29,7 +29,7 @@
     .card > header {
         text-align: left;
         padding: 0px 32px;
-        font-size: 2rem;
+        font-size: 1.5rem;
         /* display: flex; */
         line-height: 1.25em;
         gap:16px;

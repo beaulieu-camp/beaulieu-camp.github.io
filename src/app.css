@@ -10,11 +10,11 @@
     --a:70%;
     --b:40%;
 
-    --primary: var(--blue);
-    --text: hsl(200, 40%, 3%);
-    --background: hsl(200, 40%, 95%);
-    --tertiary:hsl(218, 72%, 83%);
-    --accent: hsl(219, 43%, 46%);
+    --text:       hsl(210, 78%, 2%);
+    --background: hsl(210, 78%, 91%);
+    --primary:    hsl(210, 78%, 79%);
+    --secondary:  hsl(210, 78%, 85%);
+    --accent:     hsl(210, 78%, 45%);
 
     --shadow: 0px 10px 15px -3px rgba(0,0,0,0.3) ;
     
@@ -26,16 +26,11 @@
         --green:    hsl(150, 70%, 50%);
         --red:      hsl(360, 85%, 65%);
         
-        --text: hsl(200, 40%, 95%);
-        
-        --background: hsl(200, 40%, 3%);
-        --tertiary:hsl(218, 42%, 15%);
-        --accent:  hsl(219, 43%, 46%);
-
-
-
-        --a:90%;
-        --b:20%;
+        --text:       hsl(210, 78%, 91%);
+        --background: hsl(210, 20%, 2%);
+        --primary:    hsl(210, 78%, 14%);
+        --secondary:  hsl(210, 78%, 8%);
+        --accent:     hsl(210, 78%, 55%);
 
 	}
 }
@@ -74,18 +69,20 @@ a:visited,a[href] {
 } */
 
 button {
-    background-color: var(--primary);
+    background-color: var(--accent);
     border: unset;
     border-radius: 8px;
     padding: 10px 20px;
     font-size: 1rem;
     color : var(--text);
     font-family: 'Poppins';
+    transition: 0.2s;
+
 }
 
 button:hover, button:focus {
 
-    background-color: var(--accent);
+    background-color: rgba(0,0,0,0.3);
 }
 
 
@@ -101,7 +98,7 @@ button:hover, button:focus {
 }
 
 .iconbtn:hover,.iconbtn:focus{
-    background-color: var(--primary);
+    background-color: var(--accent);
 }
 
 .iconbtn:hover > svg ,.iconbtn:focus > svg {
@@ -115,7 +112,7 @@ button:hover, button:focus {
     color: var(--text);
     text-align: left;
     width: clamp(1px,100%,640px);
-    background-color: var(--tertiary);
+    background-color: var(--secondary);
     border-radius: 16px;   
 }
 
@@ -163,8 +160,8 @@ input.searchbar ~ svg {
     display:block;
     text-align: left;
     border-radius: unset;
-  
 }
+
 .search > div:nth-child(2) > button:focus , .search > div:nth-child(2) > button:hover {
     outline: unset;
     background-color: rgba(0,0,0,0.3);
