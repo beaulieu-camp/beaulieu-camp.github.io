@@ -6,17 +6,20 @@ export let color : string
 </script>
 
 <div class="subcard">
-    <header>{title}</header>
+    {#if title}
+        <header>{title}</header>
+    {/if}
     <span class={color}><slot></slot></span>
 </div>
 
 <style>
 
     .subcard {
-        background-color: var(--secondary);
+        background-color: var(--primary);
         padding: 16px ;
         border-radius: 16px;
-        /* width: calc( 100% - 32px ); */
+        width: calc( 100% - 32px );
+        max-width: 300px;
     }
     
     header {

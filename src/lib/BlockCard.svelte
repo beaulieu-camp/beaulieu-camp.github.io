@@ -25,9 +25,6 @@
         padding: 16px;
         width: calc( 100% - 32px ) ;
         gap : 16px;
-        grid-template-rows: 150px;
-        grid-auto-columns: 300px;
-        grid-auto-flow: column;
     }
 
 

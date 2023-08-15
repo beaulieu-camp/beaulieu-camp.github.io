@@ -1,6 +1,7 @@
 <script lang="ts">
     import GridCard from "$lib/GridCard.svelte";
     import SubCard from "$lib/SubCard.svelte";
+    import MainSubCard from "$lib/MainSubCard.svelte";
     import { onMount } from "svelte";
     import { configuration } from "../../includes/store";
     import BlockCard from "$lib/BlockCard.svelte";
@@ -56,7 +57,7 @@
 </script>
 
 <BlockCard title="Paramètres" taille="square">
-    <SubCard title="Sauvegarde">
+    <MainSubCard title="Sauvegarde">
 
         <div>
             <p>Les données concernants les widgets sont stockés dans votre navigateur.</p>
@@ -69,7 +70,7 @@
         </div>
     
 
-    </SubCard>
+    </MainSubCard>
 </BlockCard>
 
 
