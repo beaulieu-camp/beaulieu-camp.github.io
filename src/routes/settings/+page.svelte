@@ -99,3 +99,13 @@
         <p>Non affilié avec l'Université de Rennes</p>
     </SubCard>
 </GridCard>
+
+<style>
+    .iconbtn {
+        background-color: var(--primary);
+        border-radius: 16px;
+    }
+    .iconbtn:hover {
+        background-color: var(--accent-hover);
+    }
+</style>

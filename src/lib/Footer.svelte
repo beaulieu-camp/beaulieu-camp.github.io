@@ -12,16 +12,14 @@
 	
 	footer {
 		display: flex;
-		/* gap:16px; */
 		justify-content: center;
 		align-items: center;
 		position: fixed;
-		background-color: color-mix( in srgb , var(--background) 40%, transparent );
+		background-color: var(--primary);
 		box-shadow: var(--shadow);
 		left:8px;
 		bottom: 8px;
 		z-index: 50;
-		backdrop-filter: blur(4px);
 		border-radius: 16px;
 		overflow: hidden;
 	}

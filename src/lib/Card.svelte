@@ -30,9 +30,10 @@
         text-align: left;
         padding: 0px 32px;
         font-size: 1.5rem;
-        /* display: flex; */
+        display: flex;
         line-height: 1.25em;
-        gap:16px;
+        gap:8px;
+        align-items: center;
     }
 
     .card {
