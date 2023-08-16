@@ -20,6 +20,7 @@ export let color : string
         border-radius: 16px;
         width: calc( 100% - 32px );
         max-width: 300px;
+        box-shadow: var(--shadow);
     }
     
     header {
