@@ -16,7 +16,7 @@ export let color : string
         background-color: var(--secondary);
         padding: 16px ;
         border-radius: 16px;
-        /* width: calc( 100% - 32px ); */
+        box-shadow: var(--shadow);
     }
     
     header {

@@ -6,17 +6,15 @@
     --yellow:   hsl(50, 100%, 50%);
     --lightblue:hsl(180, 70%, 70%);
     --purple:   hsl(275, 60%, 60%);
+  
+    --text:         hsl(210, 78%, 2%);
+    --background:   hsl(210, 78%, 92%);
+    --primary:      hsl(210, 78%, 80%);
+    --secondary:    hsl(210, 78%, 86%);
+    --accent:       hsl(210, 78%, 60%);
+    --accent-hover: hsl(210, 78%, 50%);
 
-    --a:70%;
-    --b:40%;
-
-    --text:       hsl(210, 78%, 2%);
-    --background: hsl(210, 78%, 91%);
-    --primary:    hsl(210, 78%, 79%);
-    --secondary:  hsl(210, 78%, 85%);
-    --accent:     hsl(210, 78%, 45%);
-
-    --shadow: 0px 10px 15px -3px rgba(0,0,0,0.3) ;
+    --shadow: 5px 5px 10px -10px hsl(210, 78%, 2%); ;
     
 }
 
@@ -30,9 +28,15 @@
         --background: hsl(210, 20%, 2%);
         --primary:    hsl(210, 78%, 14%);
         --secondary:  hsl(210, 78%, 8%);
-        --accent:     hsl(210, 78%, 55%);
+
+        --accent:     hsl(210, 78%, 50%);
+        --accent-hover: hsl(210, 78%, 40%);
 
 	}
+}
+
+.mapboxgl-ctrl button:not(:disabled):hover {
+    background-color:var(--accent-hover) !important;
 }
 
 html {
@@ -58,7 +62,7 @@ a:hover , button:hover, a:focus, button:focus{
 
 /* a[href] {
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.25s ease-out;
 }
 
 
@@ -71,18 +75,17 @@ a:visited,a[href] {
 button {
     background-color: var(--accent);
     border: unset;
-    border-radius: 8px;
+    border-radius: 16px;
     padding: 10px 20px;
     font-size: 1rem;
-    color : var(--text);
+    color : var(--background);
     font-family: 'Poppins';
-    transition: 0.2s;
-
+    transition: 0.25s ease-out;
+    cursor: pointer;
 }
 
 button:hover, button:focus {
-
-    background-color: rgba(0,0,0,0.3);
+    background-color: var(--accent-hover);
 }
 
 
@@ -94,25 +97,21 @@ button:hover, button:focus {
 }
 
 .iconbtn , .iconbtn > svg{
-    transition : 0.2s;
+    transition : 0.25s ease-out;
 }
 
 .iconbtn:hover,.iconbtn:focus{
-    background-color: var(--accent);
+    background-color: var(--accent-hover);
 }
 
-.iconbtn:hover > svg ,.iconbtn:focus > svg {
-
-    fill : var(--background);
-}
 
 
 .search{
     font-size: 1rem;
-    color: var(--text);
+    color: var(--background);
     text-align: left;
     width: clamp(1px,100%,640px);
-    background-color: var(--secondary);
+    background-color: var(--accent);
     border-radius: 16px;   
 }
 
@@ -131,12 +130,10 @@ input.searchbar  {
     width: inherit;
     font-size: 16px;
     height: 20px;
-
-
 }
 
 input.searchbar ~ svg {
-    color: var(--text);
+    color: var(--background);
 }
 
 .search > div:nth-child(2){
@@ -147,11 +144,9 @@ input.searchbar ~ svg {
 
 .search:focus-within > div:nth-child(2){
     display: block;
-
 }
 
 .search > div:nth-child(2) > button{
-    background-color: unset;
     width: 100%;
     padding: 8px 16px;
     text-overflow: ellipsis;
@@ -160,11 +155,6 @@ input.searchbar ~ svg {
     display:block;
     text-align: left;
     border-radius: unset;
-}
-
-.search > div:nth-child(2) > button:focus , .search > div:nth-child(2) > button:hover {
-    outline: unset;
-    background-color: rgba(0,0,0,0.3);
 }
 
 .mapboxgl-ctrl-top-left {
