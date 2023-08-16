@@ -6,7 +6,7 @@
     --yellow:   hsl(50, 100%, 50%);
     --lightblue:hsl(180, 70%, 70%);
     --purple:   hsl(275, 60%, 60%);
-
+  
     --text:         hsl(210, 78%, 2%);
     --background:   hsl(210, 78%, 92%);
     --primary:      hsl(210, 78%, 80%);
@@ -28,8 +28,10 @@
         --background: hsl(210, 20%, 2%);
         --primary:    hsl(210, 78%, 14%);
         --secondary:  hsl(210, 78%, 8%);
+
         --accent:     hsl(210, 78%, 50%);
         --accent-hover: hsl(210, 78%, 40%);
+
 	}
 }
 
