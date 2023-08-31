@@ -5,7 +5,7 @@
     import {star_fetch,get_arrets} from "../includes/star"
     import type {arret_obj} from "../includes/star"
     import {dialog,created} from "../includes/dialog"
-    import {configuration} from "../includes/store"
+    import {configuration} from "../includes/configuration"
     import BlockCard from "./BlockCard.svelte";
 
     let data:{[key:string]:arret_obj} = {} 

@@ -3,7 +3,7 @@
     import GridCard from "./GridCard.svelte";
     import SubCard from "./SubCard.svelte";
     import { salleEvents,salleLibres,getSalles } from "salles_module";
-    import { configuration } from "../includes/store";
+    import { configuration } from "../includes/configuration";
 
     import { created } from "../includes/dialog";
 

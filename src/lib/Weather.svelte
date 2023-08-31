@@ -1,7 +1,7 @@
 <script lang="ts">
     import BlockCard from "./BlockCard.svelte"
     import { onMount } from "svelte";
-  import MainSubCard from "./MainSubCard.svelte";
+    import MainSubCard from "./MainSubCard.svelte";
 
     let desc = ""
     let code = "base"

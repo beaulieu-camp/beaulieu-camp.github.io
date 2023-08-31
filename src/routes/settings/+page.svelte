@@ -3,7 +3,7 @@
     import SubCard from "$lib/SubCard.svelte";
     import MainSubCard from "$lib/MainSubCard.svelte";
     import { onMount } from "svelte";
-    import { configuration } from "../../includes/store";
+    import { configuration } from "../../includes/configuration";
     import BlockCard from "$lib/BlockCard.svelte";
     import Form from "$lib/Form.svelte";
     import Icons from "$lib/Icons.svelte";
