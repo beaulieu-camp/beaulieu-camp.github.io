@@ -21,7 +21,10 @@ export class dialog {
 
         this.values.subscribe((val) => {
             for (let input of val ){
-                if (input.checked) liste.push( input.id ) 
+                if (input.checked) {
+                    liste.push( input.id )
+
+                }
             }
         })
         

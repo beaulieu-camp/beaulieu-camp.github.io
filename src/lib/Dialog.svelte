@@ -42,8 +42,8 @@
             if ( e.target === el) {
                 save()
             }
-        })       
-   
+        })
+
     })
 
 </script>
@@ -59,8 +59,8 @@
         <div class="container">
             {#each values as value}
                 {#if denoise(value.name).includes(denoise(filter))}
-                    <input on:change={(e) => checked(e,value)} id={value.id} name={value.id} checked={value.checked} type="checkbox">
-                    <label for={value.id}>{value.name}</label>
+                    <input on:change={(e) => checked(e,value)} id={value.id} name={value.id} bind:checked={value.checked} type="checkbox">
+                    <label for={value.id}>{value.name} </label>
                     <br>
                 {/if}
             {/each}
