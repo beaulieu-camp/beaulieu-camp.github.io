@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
     import GridCard from "./GridCard.svelte";
     import SubCard from "./SubCard.svelte";
-    import { salleEvents,salleLibres,getSalles } from "salles_module";
+    import { salleLibres,getSalles } from "salles_module";
     import { configuration } from "../includes/configuration";
 
     import { created } from "../includes/dialog";
@@ -30,6 +30,7 @@
         data = {}
         for (let code of config.get("salles")) {
             let date = Math.floor(Date.now()/1000)
+            console.log(Date.now()/1000)
             data[ code ] = { ...salles[ code ], ...await salleLibres(code,date) }
         }
     }
@@ -62,6 +63,10 @@
 
     }
 
+    function uri(salle) {
+        return "salle#" + salle.batiment.replaceAll(" ","_")+ "_" +salle.salle.replaceAll(" ","_")
+    }
+
 </script>
 
 <GridCard title="Salles Ouvertes" id="salles" params_callback={dialog_call}>
@@ -69,10 +74,23 @@
         Ajoutes des salles à visualiser 😉
     {/if}
     { #each Object.values(data) as salle }
+        <a href={uri(salle)}>
         {#if salle.error}
-            <SubCard title={salle.batiment + " " + salle.salle} color="red"> {salle.error} </SubCard>
-        {:else if salle.state}
-            <SubCard title={salle.batiment + " " + salle.salle} color="green"> {salle.state } jusqu'au <br> {stringify_date(salle.until)} </SubCard>
+            <SubCard title={salle.batiment + " " + salle.salle} color="red"> { salle.error } </SubCard>
+        {:else if salle.state == "Occupé"}
+            <SubCard title={salle.batiment + " " + salle.salle} color="red"> { salle.state } jusqu'au <br> {stringify_date(salle.until)} </SubCard>
+        {:else}
+        <SubCard title={salle.batiment + " " + salle.salle} color="green"> { salle.state } jusqu'au <br> {stringify_date(salle.until)} </SubCard>
         {/if}
+        </a>
     { /each }
 </GridCard>
+
+<style>
+
+    a[href] {
+        all:unset;
+        cursor: pointer;
+    }
+
+</style>
