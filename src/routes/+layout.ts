@@ -7,6 +7,7 @@ export const load = ({ url }) => {
       case("accueil")  : { name = "Bienvenue 🙂"   ; break}
       case("map")      : { name = "Carte Beaulieu" ; break}
       case("settings") : { name = "Paramètres"     ; break}
+      case("salle") : { name = "Planning"     ; break}
     }
     return { pathname:path,name:name }
   }
