@@ -97,7 +97,7 @@
             <p>
                 { salle.state } jusqu'au <br> {stringify_date(salle.until)} 
             </p>
-            <a href={uri(salle)}
+            <a href={uri(salle)}>
                 Accéder au planning ↗
             </a>
         </SubCard>
