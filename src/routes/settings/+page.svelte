@@ -73,7 +73,7 @@
     </MainSubCard>
 </BlockCard>
 
-<BlockCard title="Paramètres" taille="square">
+<BlockCard title="Un commentaire ?" taille="square">
     <Form></Form>
 </BlockCard>
 
