@@ -74,15 +74,36 @@
         Ajoutes des salles à visualiser 😉
     {/if}
     { #each Object.values(data) as salle }
-        <a href={uri(salle)}>
-        {#if salle.error}
-            <SubCard title={salle.batiment + " " + salle.salle} color="red"> { salle.error } </SubCard>
-        {:else if salle.state == "Occupé"}
-            <SubCard title={salle.batiment + " " + salle.salle} color="red"> { salle.state } jusqu'au <br> {stringify_date(salle.until)} </SubCard>
-        {:else}
-        <SubCard title={salle.batiment + " " + salle.salle} color="green"> { salle.state } jusqu'au <br> {stringify_date(salle.until)} </SubCard>
-        {/if}
-        </a>
+    {#if salle.error}
+        <SubCard title={salle.batiment + " " + salle.salle} color="red">
+            <p>
+                { salle.error }
+            </p>
+            <a href={uri(salle)}>
+                accéder au planning
+            </a>
+        </SubCard>
+    {:else if salle.state == "Occupé"}
+        <SubCard title={salle.batiment + " " + salle.salle} color="red">
+            <p>
+                { salle.state } jusqu'au <br> {stringify_date(salle.until)} 
+            </p>
+            <a href={uri(salle)}>
+                accéder au planning
+            </a>
+        </SubCard>
+    {:else}
+        <SubCard title={salle.batiment + " " + salle.salle} color="green"> 
+            <p>
+                { salle.state } jusqu'au <br> {stringify_date(salle.until)} 
+            </p>
+            <a href={uri(salle)}
+                Accéder au planning ↗
+            </a>
+        </SubCard>
+    {/if}
+
+
     { /each }
 </GridCard>
 
@@ -91,6 +112,9 @@
     a[href] {
         all:unset;
         cursor: pointer;
+        user-select: none;
+        -webkit-user-drag: none;
+        color:var(--text);
     }
 
 </style>
