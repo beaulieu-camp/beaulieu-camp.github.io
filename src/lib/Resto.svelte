@@ -20,7 +20,7 @@
 <GridCard id="resto" title="Restaurants Universitaire">
 
     {#each data as resto}
-        {#if resto["ouverture"][(new Date()).getDay()] = "000"}
+        {#if resto["ouverture"][(new Date()).getDay()] == "000"}
             <SubCard title={resto["nom"]} color="red"> Fermé </SubCard>
         {:else}
             <SubCard title={resto["nom"]} color="Ouvert"> Ouvert </SubCard>
