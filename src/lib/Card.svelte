@@ -15,7 +15,8 @@
         {title}
         {#if params_callback != undefined} 
             <button class="iconbtn" on:click={ params_callback() }><Icons width="20" name="settings"></Icons></button>
-        {/if}
+            {/if}
+        
     </header>
     <slot></slot>
 </div>

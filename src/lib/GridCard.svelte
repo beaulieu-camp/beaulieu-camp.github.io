@@ -10,6 +10,7 @@
     let lastt = 0
 
     import Card from "$lib/Card.svelte"
+    import Icons from "./Icons.svelte";
 
     function smooth(chrono:number) {
 
@@ -61,12 +62,26 @@
         })
         
     })
+    let sens = "arrowright"
+
+    function autoflow(){
+        if ( slide.style.gridAutoFlow == "unset" ) {
+            slide.style.gridAutoFlow = "column" 
+            sens = "arrowright"
+        }
+        else {
+            slide.style.gridAutoFlow = "unset" 
+            sens = "arrowbottom"
+        }
+    }
 
 </script>
 
 
 
 <Card title={title} params_callback={params_callback}>
+    
+    <button class="iconbtn" on:click={ autoflow }><Icons width="20" name={sens}></Icons></button>
     <div class="flex" bind:this={slide}>
         <slot></slot>
     </div>
@@ -75,7 +90,11 @@
 
 
 <style>
-    
+    button {
+        width:  52px;
+        margin-left: 16px;
+        margin-top: 16px;
+    }
     div.flex {
         /* scroll-behavior: smooth; */
 
