@@ -18,11 +18,16 @@
 
         code = decodeURIComponent ( window.location.hash.slice(0) ).slice(1)
 
-        date = date - ( new Date(date).getDay() - 1 ) * 24 * 60 * 60
+        let day = ( new Date(date*1000).getDay() - 1 ) * 24 * 60 * 60
+        let hours = ( new Date(date*1000).getHours() ) * 60 * 60
+        let minutes = ( new Date(date*1000).getMinutes() ) * 60
+        date = date - day - hours - minutes
+
         let inter2 = []
         for ( let i=0;i<5;i++){
             let inter:sallestype = {}
             let time = date+i*24*60*60
+
             let response = await salleEvents(code,time)
             if ( !response.error ){
                 inter = {

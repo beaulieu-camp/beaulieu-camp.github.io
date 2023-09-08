@@ -30,8 +30,8 @@
         data = {}
         for (let code of config.get("salles")) {
             let date = Math.floor(Date.now()/1000)
-            console.log(Date.now()/1000)
             data[ code ] = { ...salles[ code ], ...await salleLibres(code,date) }
+            console.log(code,Date.now()/1000,data[ code ])
         }
     }
     
@@ -80,7 +80,7 @@
                 { salle.error }
             </p>
             <a href={uri(salle)}>
-                accéder au planning
+                Accéder au planning ↗
             </a>
         </SubCard>
     {:else if salle.state == "Occupé"}
@@ -89,7 +89,7 @@
                 { salle.state } jusqu'au <br> {stringify_date(salle.until)} 
             </p>
             <a href={uri(salle)}>
-                accéder au planning
+                Accéder au planning ↗
             </a>
         </SubCard>
     {:else}
