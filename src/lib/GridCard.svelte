@@ -62,27 +62,15 @@
         })
         
     })
-    let sens = "arrowright"
 
-    function autoflow(){
-        if ( slide.style.gridAutoFlow == "unset" ) {
-            slide.style.gridAutoFlow = "column" 
-            sens = "arrowright"
-        }
-        else {
-            slide.style.gridAutoFlow = "unset" 
-            sens = "arrowbottom"
-        }
-    }
+
 
 </script>
 
 
 
-<Card title={title} params_callback={params_callback}>
-    
-    <button class="iconbtn" on:click={ autoflow }><Icons width="20" name={sens}></Icons></button>
-    <div class="flex" bind:this={slide}>
+<Card title={title} params_callback={params_callback} slide={slide}>
+        <div class="flex" bind:this={slide}>
         <slot></slot>
     </div>
 </Card>

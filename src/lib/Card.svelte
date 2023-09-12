@@ -2,9 +2,23 @@
 
     export let title:String
     export let params_callback: Function|undefined
+    export let slide: HTMLElement
 
     import Icons from "$lib/Icons.svelte"
 
+    let sens = "arrowright"
+
+
+    function autoflow(){
+        if ( slide.style.gridAutoFlow == "unset" ) {
+            slide.style.gridAutoFlow = "column" 
+            sens = "arrowright"
+        }
+        else {
+            slide.style.gridAutoFlow = "unset" 
+            sens = "arrowbottom"
+        }
+    }
 </script>
 
 
@@ -13,9 +27,13 @@
     
     <header>
         {title}
+        {#if slide != undefined}     
+            <button class="iconbtn" on:click={ autoflow }><Icons width="20" name={sens}></Icons></button>
+        {/if}
         {#if params_callback != undefined} 
             <button class="iconbtn" on:click={ params_callback() }><Icons width="20" name="settings"></Icons></button>
-            {/if}
+        {/if}
+
         
     </header>
     <slot></slot>
