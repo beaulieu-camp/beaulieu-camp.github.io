@@ -52,6 +52,11 @@
             })
         }
 
+        allsalles = allsalles.sort(function(a, b) {
+            return a["id"].localeCompare(b["id"]);
+        })
+
+
         let callback =  async (liste:string[]) => {
                             config.set("salles",liste);
                             await update_salles();
