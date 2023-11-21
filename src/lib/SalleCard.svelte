@@ -1,0 +1,85 @@
+<script lang="ts">
+
+    export let batiment:String
+    export let salle:String
+    export let date: number
+    export let status: String
+    export let error: String
+
+    function uri(batiment:String,salle:String) {
+        return "salle#" + batiment.replaceAll(" ","_")+ "_" +salle.replaceAll(" ","_")
+    }
+
+    function stringify_date(time:number){
+        if (time == undefined) return 'updating';
+
+        let date = new Date(time*1000)
+        
+        return date.toLocaleString('fr')
+    }
+</script>
+
+<a href={uri(batiment,salle)}>
+    {#if status}
+
+        <div>
+            <p>{status == "Libre" ? "🟢" : "🔴"} {status}</p>
+            <h3>{salle}</h3>
+
+            <br>
+            <p>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.6214 2.55029L21.4498 5.37872L20.0356 6.79293L17.2071 3.96451L18.6214 2.55029Z" fill="currentColor" /><path d="M12.8225 8.60055H10.8225V12.6005H12.8225V8.60055Z" fill="currentColor" /><path fill-rule="evenodd" clip-rule="evenodd" d="M5.18633 18.8137C8.70105 22.3285 14.3995 22.3285 17.9143 18.8137C21.429 15.299 21.429 9.60055 17.9143 6.08583C14.3995 2.57111 8.70105 2.57111 5.18633 6.08583C1.67161 9.60054 1.67161 15.299 5.18633 18.8137ZM6.60054 17.3995C9.33422 20.1332 13.7664 20.1332 16.5 17.3995C19.2337 14.6659 19.2337 10.2337 16.5 7.50004C13.7664 4.76637 9.33422 4.76637 6.60054 7.50004C3.86688 10.2337 3.86688 14.6659 6.60054 17.3995Z" fill="currentColor" /></svg>
+                Jusqu'au {stringify_date(date)}
+            </p>
+        </div>
+    {:else if error} 
+        <div>
+            <p>{status == "Libre" ? "🟢" : "🔴"} {error}</p>
+            <h3>{salle}</h3>
+
+            <br>
+            <br>
+        </div>
+    {:else}
+        <div>
+            <p>Chargement</p>
+            <h3>{salle}</h3>
+            <br>
+            <br>  
+        </div>
+         
+    {/if}
+</a>
+
+<style>
+
+div{
+    background-color: var(--secondary);
+    padding:16px;
+    border-radius: 16px ;
+    display: flex;
+    flex-direction: column;
+}
+
+h3,p{
+    margin:0;
+}
+
+p{
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.7;
+}
+
+a[href] {
+        all:unset;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-drag: none;
+        color:var(--text);
+        width: 300px;
+    }
+
+</style>
