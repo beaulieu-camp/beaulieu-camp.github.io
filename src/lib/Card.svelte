@@ -2,8 +2,6 @@
 
     export let title:String
 
-    import Icons from "$lib/Icons.svelte"
-
 </script>
 
 
@@ -16,11 +14,7 @@
     <p><slot></slot></p>
 </div>
 
-
-
 <style>
-
-
 
 div{
     background-color: var(--secondary);
