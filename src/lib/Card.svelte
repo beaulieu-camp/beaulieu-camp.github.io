@@ -1,7 +1,6 @@
 <script lang="ts">
 
     export let title:String
-    export let params_callback: Function|undefined
 
     import Icons from "$lib/Icons.svelte"
 
@@ -11,14 +10,10 @@
 
 <div class="card">
     
-    <header>
+    <h3>
         {title}
-        {#if params_callback != undefined} 
-            <button class="iconbtn" on:click={ params_callback() }><Icons width="20" name="settings"></Icons></button>
-            {/if}
-        
-    </header>
-    <slot></slot>
+    </h3>
+    <p><slot></slot></p>
 </div>
 
 
@@ -27,27 +22,24 @@
 
 
 
-    .card > header {
-        text-align: left;
-        padding: 0px 32px;
-        font-size: 1.5rem;
-        display: flex;
-        line-height: 1.25em;
-        gap:8px;
-        align-items: center;
-    }
+div{
+    background-color: var(--secondary);
+    padding:16px;
+    border-radius: 16px ;
+    display: flex;
+    flex-direction: column;
+}
 
-    .card {
-        position: relative;
-        user-select: none;
+h3,p{
+    margin:0;
+}
 
-        margin: 16px 0;
-        transition: height 0.25s ease-in;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        width: calc(100%);
-        
-    }
+p{
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.7;
+}
 
 </style>

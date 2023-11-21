@@ -1,9 +1,6 @@
 <script lang="ts">
-    import BlockCard from "./BlockCard.svelte"
     import { onMount } from "svelte";
-    import MainSubCard from "./MainSubCard.svelte";
 
-    let desc = ""
     let code = "base"
     let temperature = ""
 
@@ -14,42 +11,14 @@
         code = data.code
     })
 
-    $: switch (code) {
-        case '01d' : desc= "Dégagé"   ; break;
-        case '01n' : desc= "Dégagé"   ; break;
-        case '02d' : desc= "Epars"    ; break;
-        case '02n' : desc= "Epars"    ; break;
-        case '03d' : desc= "Nuageux"  ; break;
-        case '03n' : desc= "Nuageux"  ; break;
-        case '04d' : desc= "Couvert"  ; break;
-        case '04n' : desc= "Couvert"  ; break;
-        case '09d' : desc= "Pluvieux" ; break;
-        case '09n' : desc= "Pluvieux" ; break;
-        case '10d' : desc= "Pluvieux" ; break;
-        case '10n' : desc= "Pluvieux" ; break;
-        case '11d' : desc= "Orage"    ; break;
-        case '11n' : desc= "Orage"    ; break;
-        case '13d' : desc= ""         ; break;
-        case '13n' : desc= ""         ; break;
-        case '50d' : desc= ""         ; break;
-        case '50n' : desc= ""         ; break;
-    }
-
 </script>
 
-<BlockCard title="Méteo Beaulieu">
-    <MainSubCard>
-
-        <span>
-            <img draggable="false" src="/weather/{code}.svg" alt="icon"/>
-            <div>
-                <h1> {temperature}° </h1>
-                <p> {desc} </p>
-            </div>
-        </span>
-    </MainSubCard>
-
-</BlockCard>
+<span>
+    <img draggable="false" src="/weather/{code}.svg" alt="icon"/>
+    <div>
+        <h1> {temperature}° </h1>
+    </div>
+</span>
 
 
 
@@ -57,8 +26,19 @@
     span {
         display: flex;
         align-items: center;
-        height: 100%;
+        height: 64px;
+        position: absolute;
+        z-index: 50;
+        padding:4px;
+        border-radius: 16px;
+        left:8px;
+        top:64px;
 
+        box-shadow: 0 4px 30px #0000001a;
+        border: 1px solid rgba(0,0,0,.3);
+        backdrop-filter: blur(6.7px);
+        -webkit-backdrop-filter: blur(6.7px);
+        user-select: none;
     }
 
     div {
@@ -70,7 +50,7 @@
     }
 
     h1 {
-        font-size: 4rem;
+        font-size: 2rem;
         margin: 0;
         font-weight: bold;
         line-height: 1em;

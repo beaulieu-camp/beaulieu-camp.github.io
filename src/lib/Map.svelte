@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
     import 'mapbox-gl/dist/mapbox-gl.css';
     import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 
@@ -145,18 +145,5 @@
     })
     </script>
     
-    <BlockCard title="Carte Beaulieu" id="beaulieumap">
-        <div id="map"></div>
-    </BlockCard>
-    
-    
-    <style>
-    
-        #map { 
-            width: 100%;
-            height: calc(100svh - 191px) ;
-            border-radius: 16px;
-        }
-    
-    
-    </style>
+    <div id="map"></div>
+ -->

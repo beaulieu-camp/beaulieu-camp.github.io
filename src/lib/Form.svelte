@@ -1,5 +1,6 @@
 <script lang="ts">
-  import MainSubCard from "./MainSubCard.svelte";
+  import Card from "./Card.svelte";
+import MainSubCard from "./MainSubCard.svelte";
 
     export let value = ""
     let url = "https://discord.com/api/webhooks/1139252281620041869/gxywncJzWyvsWDfIbdgFUx-zquJjL0JBOBO7vs7Joud073z3wafHis0L-tUX2IRATz2T"
@@ -23,22 +24,34 @@
 
 </script>
 
+<Card title="Feedback">
+<div>
 
-<MainSubCard title="Feedback">
     <textarea bind:value={value}></textarea>
-    <br>
     <button on:click={send}>Envoyer</button>
-</MainSubCard>
+</div>
+
+</Card>
 
 <style>
-    textarea{
+    div {
+        display: flex;
         width: 100%;
+        gap: 16px;
+    }
+
+    div > * {
+        border-radius: 8px;
+
+    }
+
+    textarea{
+        flex:1;
         height: 150px;
         resize: none;
         outline: unset;
         border: unset;
         background-color: rgb(255,255,255,0.2);
-        border-radius: 8px;
         color : var(--text);
     }
 </style>
