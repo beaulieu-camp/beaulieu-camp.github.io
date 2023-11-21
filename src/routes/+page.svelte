@@ -11,4 +11,4 @@
 <Resto></Resto>
 <Biblio></Biblio>
 <Salles></Salles>
-<Star></Star>
+<!-- <Star></Star> -->
