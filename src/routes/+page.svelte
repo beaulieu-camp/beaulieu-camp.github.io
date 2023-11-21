@@ -63,7 +63,7 @@
 </script>
 
 <div class="container">
-
+    <header>Salles Libres</header>
   
   { #each Object.values(horaires) as batiment }
   
@@ -109,5 +109,7 @@
   .container {
     padding:16px;
   }
+
+
 
 </style>

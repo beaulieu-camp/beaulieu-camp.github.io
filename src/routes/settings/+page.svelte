@@ -1,13 +1,12 @@
 <script lang="ts">
 
     import Card from "$lib/Card.svelte";
-    import Form from "$lib/Form.svelte";
-    import Icons from "$lib/Icons.svelte";
+    import Form from "./Form.svelte";
 
 </script>
 
 <div class="container">
-
+    <header>Informations</header>
 
     <Form></Form>
 
@@ -43,16 +42,6 @@
 
 </div>
 
-<!-- <GridCard title="Informations">
-
-    <SubCard title="Réseaux">
-       <a class="iconbtn" target="_blank" href="https://discord.gg/xbTnysGgZN"><Icons width="32" name="discord"/></a>
-        <a class="iconbtn" target="_blank" href=""><Icons width="32" name="github"/></a>
-    </SubCard>
-
-
-</GridCard> -->
-
 <style>
     .container {
         display: flex;
@@ -61,7 +50,7 @@
         gap: 16px;
     }
     .iconbtn {
-        background-color: var(--primary);
+        background-color: var(--secondary);
         border-radius: 16px;
     }
     .iconbtn:hover {
