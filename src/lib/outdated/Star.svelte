@@ -2,8 +2,8 @@
     import { onMount } from "svelte";
     import GridCard from "./GridCard.svelte";
     import SubCard from "./SubCard.svelte";
-    import {star_fetch,get_arrets} from "../includes/star"
-    import type {arret_obj} from "../includes/star"
+    import {star_fetch,get_arrets} from "../../includes/star"
+    import type {arret_obj} from "../../includes/star"
     import {dialog,created} from "../includes/dialog"
     import {configuration} from "../includes/configuration"
     import BlockCard from "./BlockCard.svelte";

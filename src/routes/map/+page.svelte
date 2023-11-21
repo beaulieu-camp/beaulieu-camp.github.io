@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Weather from '$lib/Weather.svelte';
+    import Weather from './Weather.svelte';
     import 'mapbox-gl/dist/mapbox-gl.css';
     import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 
@@ -161,8 +161,6 @@
         #map { 
             width: 100%;
             height:100%;
-
-          	border-radius: 16px;
           	position: absolute;
         }
     
