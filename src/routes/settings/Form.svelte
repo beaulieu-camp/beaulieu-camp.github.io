@@ -12,7 +12,6 @@
             },
             body: JSON.stringify({content:value,thread_name:"Feedback"}),
         })
-        console.log(response)
         if (response.status == 204) {
             alert("Message Envoyé, merci 🙂")
         }
