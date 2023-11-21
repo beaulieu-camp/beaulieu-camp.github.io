@@ -1,6 +1,5 @@
 <script lang="ts">
-  import Card from "./Card.svelte";
-import MainSubCard from "./MainSubCard.svelte";
+  import Card from "$lib/Card.svelte";
 
     export let value = ""
     let url = "https://discord.com/api/webhooks/1139252281620041869/gxywncJzWyvsWDfIbdgFUx-zquJjL0JBOBO7vs7Joud073z3wafHis0L-tUX2IRATz2T"
