@@ -1,4 +1,6 @@
 <script lang="ts">
+    import Icons from "./Icons.svelte";
+
 
     export let batiment:String
     export let salle:String
@@ -23,7 +25,7 @@
     {#if status}
 
         <div>
-            <p>{status == "Libre" ? "🟢" : "🔴"} {status}</p>
+            <p><Icons color="{status == "Libre" ? "var(--green)" : "var(--red)"}" name="circle" width="16"></Icons> {status}</p>
             <h3>{salle}</h3>
 
             <br>
@@ -34,7 +36,7 @@
         </div>
     {:else if error} 
         <div>
-            <p>{status == "Libre" ? "🟢" : "🔴"} {error}</p>
+            <p>🔴 {error}</p>
             <h3>{salle}</h3>
 
             <br>

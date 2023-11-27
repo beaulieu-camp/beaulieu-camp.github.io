@@ -29,8 +29,8 @@
           this.show = true
       }
 
-      alternShow() {
-        this.show = !this.show
+      set setShow(newShow : boolean) {
+        this.show = newShow
       }
 
       set addSalle(list:[string,string]){
@@ -81,8 +81,9 @@
   
   <div style="display:flex;align-items:center;gap:16px;">
       <h2>Salles du {batiment.name}</h2>
-      <!-- <span on:click={() => batiment.alternShow()} style="display:grid;place-items:center;"><Icons name="eye" width="24"></Icons></span> -->
+      <button  on:click={() => batiment.setShow = !batiment.getShow} style="all:unset;display:grid;place-items:center;"><Icons name="eye" width="24"></Icons></button>
     </div>
+
     {#if batiment.getShow}
         <div class="flexgrid">
             {#each batiment.getSalles as salle}
@@ -117,7 +118,7 @@
     grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
     gap: 16px;
   }
-  
+
   .container {
     padding:16px;
   }
