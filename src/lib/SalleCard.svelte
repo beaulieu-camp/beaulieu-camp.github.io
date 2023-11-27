@@ -79,7 +79,8 @@ a[href] {
         user-select: none;
         -webkit-user-drag: none;
         color:var(--text);
-        width: 300px;
+        /* max-width: 300px; */
+        /* flex: 300px 1; */
     }
 
 </style>

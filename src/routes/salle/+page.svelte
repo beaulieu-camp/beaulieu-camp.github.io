@@ -48,7 +48,7 @@
 
     
     const hours : number[] = [
-        7,8,9,10,11,12,13,14,15,16,17,18,19
+        7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
     ];
 
     function get_time(timestamp: number) : number{
@@ -66,7 +66,7 @@
             <column class="events-list">
                 <titre>{day.jour}</titre>
                 {#each day.events as event}
-                <div style="top:calc( 70px + 50px * {get_time(event[0])-hours[0]});height: calc( 50px * {get_time(event[1])-get_time(event[0])})">
+                <div style="top:calc( 66px + 50px * {get_time(event[0])-hours[0]});height: calc( 50px * {get_time(event[1])-get_time(event[0])})">
                     {event[2]}
                 </div>
                 {/each}
@@ -146,7 +146,7 @@
     rowbody {
         width: 100%;
         overflow-x: auto;
-        height:700px;
+        height:900px;
     }
 
     column > * {
