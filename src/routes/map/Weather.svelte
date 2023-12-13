@@ -20,15 +20,13 @@
     </div>
 </span>
 
-
-
 <style>
     span {
         display: flex;
         align-items: center;
         height: 64px;
         position: absolute;
-        z-index: 50;
+        z-index: 1;
         padding:4px;
         border-radius: 16px;
         left:8px;
