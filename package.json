@@ -11,15 +11,16 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^2.0.3",
-		"@sveltejs/kit": "^1.27.7",
-		"svelte": "^4.1.2"
+		"@sveltejs/adapter-static": "^3.0.1",
+		"@sveltejs/kit": "^2.5.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.2",
+		"svelte": "^4.2.11"
 	},
 	"type": "module",
 	"dependencies": {
 		"hammerjs": "^2.0.8",
-		"mapbox-gl": "^2.15.0",
+		"maplibre-gl": "^4.0.1",
 		"salles_module": "github:beaulieu-camp/salles_module",
-		"vite": "^4.5.2"
+		"vite": "^5.1.3"
 	}
 }
