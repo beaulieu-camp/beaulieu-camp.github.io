@@ -41,7 +41,7 @@ export default class  {
         this.geojson
         this._map = map;
         this._container = document.createElement('div');
-        this._container.className = 'mapboxgl-ctrl search';
+        this._container.className = 'maplibregl-ctrl search';
         this._container.innerHTML = `<div><input class='searchbar'/>${svg}</div><div></div>`;
 
         let input = this._container.children[0]

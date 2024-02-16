@@ -1,10 +1,9 @@
 <script lang="ts">
     import Weather from './Weather.svelte';
-    import 'mapbox-gl/dist/mapbox-gl.css';
-    import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+    import 'maplibre-gl/dist/maplibre-gl.css';
+    import maplibregl from 'maplibre-gl';
 
     import { onMount } from 'svelte';
-    mapboxgl.accessToken = '123';
 
     
     function changelayer(event,map){
@@ -38,7 +37,7 @@
         let geojson = await import('$lib/../includes/geojson.json')
         let def = await import('$lib/../includes/search.ts')
     
-        const map = new mapboxgl.Map({
+        const map = new maplibregl.Map({
             container: 'map',
             projection: 'mercator',
             style: {
@@ -95,7 +94,7 @@
             minZoom: 14
         });
     
-        map.addControl(new mapboxgl.FullscreenControl(),'bottom-right');
+        map.addControl(new maplibregl.FullscreenControl(),'bottom-right');
     
         let ctrl = new def.default(geojson)
         map.addControl(ctrl,'top-left')
@@ -117,7 +116,7 @@
             let a = it.bounds[0]
             let b = it.bounds[1]
             
-            let m = new mapboxgl.Marker(el).setLngLat([(a[0]+b[0])/2 , (a[1]+b[1])/2])
+            let m = new maplibregl.Marker({element:el}).setLngLat([(a[0]+b[0])/2 , (a[1]+b[1])/2])
 
             if (it.properties.name.startsWith("Bâtiment")){
 
@@ -171,7 +170,7 @@
             }
             // 
             // make a marker for each feature and add to the map
-            let m = new mapboxgl.Marker(el).setLngLat(marker[0].reverse()).addTo(map);
+            let m = new maplibregl.Marker({element:el}).setLngLat(marker[0].reverse()).addTo(map);
         }
     })
     </script>
